@@ -27,8 +27,8 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border/70 py-3"
-          : "border-b border-transparent py-6"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border/70 py-3 text-foreground"
+          : "border-b border-transparent py-6 text-cream"
       }`}
     >
       <div className="mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-6 px-6 md:px-10 lg:grid-cols-[1fr_auto_1fr]">
@@ -40,7 +40,11 @@ export function SiteHeader() {
             <span className="block truncate font-display text-lg leading-none tracking-tight">
               Brew &amp; Bean
             </span>
-            <span className="mt-1 block text-[0.55rem] tracking-[0.3em] text-muted-foreground uppercase">
+            <span
+              className={`mt-1 block text-[0.55rem] tracking-[0.3em] uppercase ${
+                scrolled ? "text-muted-foreground" : "opacity-60"
+              }`}
+            >
               Cafe · Est. 2012
             </span>
           </span>
@@ -51,8 +55,10 @@ export function SiteHeader() {
             <Link
               key={l.to}
               to={l.to}
-              className="link-underline text-[0.7rem] font-semibold tracking-[0.22em] uppercase text-muted-foreground transition-colors hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
+              className={`link-underline text-[0.7rem] font-semibold tracking-[0.22em] uppercase transition-opacity ${
+                scrolled ? "text-muted-foreground hover:text-foreground" : "opacity-70 hover:opacity-100"
+              }`}
+              activeProps={{ className: scrolled ? "text-foreground" : "opacity-100" }}
               activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
@@ -61,10 +67,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden justify-end lg:flex">
-          <Link to="/reserve" className="btn-lux">
+          <Link
+            to="/reserve"
+            className={scrolled ? "btn-lux" : "btn-lux bg-cream text-espresso hover:bg-brass-soft"}
+          >
             Book a Table
           </Link>
         </div>
+
 
         <button
           type="button"
