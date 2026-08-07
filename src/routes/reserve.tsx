@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Check, Clock, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import interiorImg from "@/assets/interior.jpg";
@@ -154,7 +155,9 @@ function ReservePage() {
 
           <Reveal delay={140}>
             <aside className="border-t border-border pt-10 lg:border-t-0 lg:border-l lg:pl-12 lg:pt-0">
+              <BrandLogo className="mb-8 h-11" />
               <p className="eyebrow">Find us</p>
+
               <ul className="mt-8 space-y-7 text-sm">
                 <li className="flex gap-4">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />

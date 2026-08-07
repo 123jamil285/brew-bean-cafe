@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, Phone, Clock } from "lucide-react";
+import { BrandLogo } from "./BrandLogo";
+
 
 export function SiteFooter() {
   return (
@@ -7,11 +9,12 @@ export function SiteFooter() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 md:px-10">
         <div className="grid gap-14 md:grid-cols-[1.3fr_1fr_1fr]">
           <div className="max-w-sm">
-            <h3 className="font-display text-4xl">Brew &amp; Bean</h3>
-            <p className="mt-4 text-sm leading-relaxed opacity-70">
-              Brewed with passion • Served with love. A single-origin roastery and quiet
+            <BrandLogo onDark className="h-12" />
+            <p className="mt-6 text-sm leading-relaxed opacity-70">
+              Brewed with Passion, Served with Love. A single-origin roastery and quiet
               corner for the city's slow mornings.
             </p>
+
             <a
               href="https://instagram.com"
               className="mt-8 inline-flex items-center gap-2 text-[0.7rem] font-semibold tracking-[0.22em] uppercase opacity-70 transition-opacity hover:opacity-100"

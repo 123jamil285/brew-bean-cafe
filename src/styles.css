@@ -40,6 +40,7 @@
   --color-sand: var(--sand);
   --color-brass: var(--brass);
   --color-brass-soft: var(--brass-soft);
+  --color-coffee: var(--coffee);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 }
@@ -47,31 +48,34 @@
 :root {
   --radius: 0.25rem;
 
-  --espresso: oklch(0.19 0.032 48);
-  --cream: oklch(0.968 0.014 82);
-  --sand: oklch(0.918 0.021 79);
-  --brass: oklch(0.72 0.106 76);
-  --brass-soft: oklch(0.84 0.062 82);
+  /* Official brand palette */
+  --espresso: #3b2a1f;
+  --coffee: #6f4e37;
+  --cream: #faf7f2;
+  --sand: #ede4d8;
+  --brass: #d4a373;
+  --brass-soft: #e6c79f;
 
-  --background: oklch(0.968 0.014 82);
-  --foreground: oklch(0.19 0.032 48);
-  --card: oklch(0.985 0.008 82);
-  --card-foreground: oklch(0.19 0.032 48);
-  --popover: oklch(0.985 0.008 82);
-  --popover-foreground: oklch(0.19 0.032 48);
-  --primary: oklch(0.19 0.032 48);
-  --primary-foreground: oklch(0.968 0.014 82);
-  --secondary: oklch(0.918 0.021 79);
-  --secondary-foreground: oklch(0.19 0.032 48);
-  --muted: oklch(0.93 0.016 80);
-  --muted-foreground: oklch(0.46 0.028 55);
-  --accent: oklch(0.72 0.106 76);
-  --accent-foreground: oklch(0.19 0.032 48);
+  --background: #faf7f2;
+  --foreground: #3b2a1f;
+  --card: #fffdfa;
+  --card-foreground: #3b2a1f;
+  --popover: #fffdfa;
+  --popover-foreground: #3b2a1f;
+  --primary: #3b2a1f;
+  --primary-foreground: #faf7f2;
+  --secondary: #ede4d8;
+  --secondary-foreground: #3b2a1f;
+  --muted: #f0e8de;
+  --muted-foreground: #6f4e37;
+  --accent: #d4a373;
+  --accent-foreground: #3b2a1f;
   --destructive: oklch(0.55 0.19 27);
-  --destructive-foreground: oklch(0.98 0.006 82);
-  --border: oklch(0.86 0.02 80);
-  --input: oklch(0.86 0.02 80);
-  --ring: oklch(0.72 0.106 76);
+  --destructive-foreground: #faf7f2;
+  --border: #e0d3c4;
+  --input: #e0d3c4;
+  --ring: #d4a373;
+
 
   --shadow-soft: 0 30px 60px -35px color-mix(in oklab, var(--espresso) 55%, transparent);
   --shadow-lift: 0 40px 80px -40px color-mix(in oklab, var(--espresso) 70%, transparent);

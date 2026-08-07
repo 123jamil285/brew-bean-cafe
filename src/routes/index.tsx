@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Coffee, Leaf, Flame, Star } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { BrandLogo } from "@/components/BrandLogo";
+
 import heroImg from "@/assets/hero.jpg";
 import interiorImg from "@/assets/interior.jpg";
 import beansImg from "@/assets/beans.jpg";
@@ -81,8 +83,12 @@ function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 pt-32 pb-20 md:px-10">
           <Reveal>
-            <p className="eyebrow">Est. 2012 · Old Harbour District</p>
+            <BrandLogo priority onDark className="h-14 md:h-20" />
           </Reveal>
+          <Reveal delay={80}>
+            <p className="eyebrow mt-8">Est. 2012 · Old Harbour District</p>
+          </Reveal>
+
           <Reveal delay={120}>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,10vw,8.5rem)] leading-[0.88] tracking-[-0.03em]">
               Brewed with passion,
