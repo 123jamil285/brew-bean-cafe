@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, Phone, Clock } from "lucide-react";
+import { BrandLogo } from "./BrandLogo";
+
 
 export function SiteFooter() {
   return (
