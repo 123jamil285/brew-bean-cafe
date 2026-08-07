@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Check, Clock, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import interiorImg from "@/assets/interior.jpg";
