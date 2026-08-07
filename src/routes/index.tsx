@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Coffee, Leaf, Flame, Star } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { BrandLogo } from "@/components/BrandLogo";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
+
 
 import heroImg from "@/assets/hero.jpg";
 import interiorImg from "@/assets/interior.jpg";
@@ -277,7 +279,11 @@ function Home() {
         </div>
       </section>
 
+      {/* Why choose us */}
+      <WhyChooseUs />
+
       {/* Testimonials */}
+
       <section className="border-y border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
           <Reveal>

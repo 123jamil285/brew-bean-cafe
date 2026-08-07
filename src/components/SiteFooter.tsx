@@ -55,12 +55,23 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link to="/gallery" className="link-underline">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="link-underline">
+                  Contact
+                </Link>
+              </li>
+              <li>
                 <Link to="/reserve" className="link-underline">
                   Reservations
                 </Link>
               </li>
             </ul>
           </div>
+
         </div>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-cream/15 pt-8 text-[0.65rem] tracking-[0.2em] uppercase opacity-50 sm:flex-row sm:items-center sm:justify-between">

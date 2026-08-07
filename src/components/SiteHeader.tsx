@@ -8,8 +8,11 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
   { to: "/about", label: "Our Story" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/contact", label: "Contact" },
   { to: "/reserve", label: "Reserve" },
 ] as const;
+
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
