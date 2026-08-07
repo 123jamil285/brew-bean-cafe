@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Coffee, Leaf, Flame, Star } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { BrandLogo } from "@/components/BrandLogo";
+
 import heroImg from "@/assets/hero.jpg";
 import interiorImg from "@/assets/interior.jpg";
 import beansImg from "@/assets/beans.jpg";
