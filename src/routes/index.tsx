@@ -279,7 +279,11 @@ function Home() {
         </div>
       </section>
 
+      {/* Why choose us */}
+      <WhyChooseUs />
+
       {/* Testimonials */}
+
       <section className="border-y border-border bg-secondary/40">
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
           <Reveal>
