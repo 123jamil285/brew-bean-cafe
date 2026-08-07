@@ -31,14 +31,14 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const shots = [
-  { src: gallery1, alt: "Barista tamping espresso grounds with a brass tamper", label: "The Bar", span: "sm:row-span-2" },
-  { src: gallery2, alt: "Oak communal table set with ceramic cups and linen napkins", label: "The Room", span: "" },
-  { src: gallery3, alt: "Pour over coffee brewing into a glass carafe with steam rising", label: "Slow Bar", span: "" },
-  { src: gallery4, alt: "Cafe terrace with bistro tables and olive trees at golden hour", label: "The Terrace", span: "sm:row-span-2" },
-  { src: beansImg, alt: "Macro detail of freshly roasted coffee beans", label: "The Roastery", span: "" },
-  { src: menuImg, alt: "Flat lay of espresso, pastries and brewing equipment", label: "The Kitchen", span: "" },
-  { src: interiorImg, alt: "Warm oak and linen interior with brass lighting", label: "Mezzanine", span: "" },
-  { src: heroImg, alt: "Barista pouring latte art into a ceramic cup", label: "Morning Service", span: "" },
+  { src: gallery1, alt: "Barista tamping espresso grounds with a brass tamper", label: "The Bar" },
+  { src: gallery2, alt: "Oak communal table set with ceramic cups and linen napkins", label: "The Room" },
+  { src: gallery3, alt: "Pour over coffee brewing into a glass carafe with steam rising", label: "Slow Bar" },
+  { src: gallery4, alt: "Cafe terrace with bistro tables and olive trees at golden hour", label: "The Terrace" },
+  { src: beansImg, alt: "Macro detail of freshly roasted coffee beans", label: "The Roastery" },
+  { src: menuImg, alt: "Flat lay of espresso, pastries and brewing equipment", label: "The Kitchen" },
+  { src: interiorImg, alt: "Warm oak and linen interior with brass lighting", label: "Mezzanine" },
+  { src: heroImg, alt: "Barista pouring latte art into a ceramic cup", label: "Morning Service" },
 ];
 
 function GalleryPage() {
@@ -65,11 +65,11 @@ function GalleryPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <ul className="grid auto-rows-[220px] gap-4 sm:grid-cols-2 sm:auto-rows-[260px] lg:grid-cols-4">
+        <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
           {shots.map((s, i) => (
-            <li key={s.label} className={s.span}>
+            <li key={s.label} className="mb-4 break-inside-avoid">
               <Reveal delay={(i % 4) * 90}>
-                <figure className="group relative h-full overflow-hidden rounded-sm">
+                <figure className="group relative overflow-hidden rounded-sm">
                   <img
                     src={s.src}
                     alt={s.alt}
@@ -77,7 +77,7 @@ function GalleryPage() {
                     decoding="async"
                     width={1200}
                     height={900}
-                    className="h-full w-full object-cover transition-transform duration-[1.2s] ease-[var(--ease-lux)] group-hover:scale-105"
+                    className="h-auto w-full transition-transform duration-[1.2s] ease-[var(--ease-lux)] group-hover:scale-105"
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-espresso/85 to-transparent px-5 pt-14 pb-5 text-[0.6rem] tracking-[0.24em] uppercase text-cream opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     {s.label}
