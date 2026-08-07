@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { BrandLogo } from "./BrandLogo";
+
 
 const links = [
   { to: "/", label: "Home" },
