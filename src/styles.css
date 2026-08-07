@@ -40,6 +40,7 @@
   --color-sand: var(--sand);
   --color-brass: var(--brass);
   --color-brass-soft: var(--brass-soft);
+  --color-coffee: var(--coffee);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 }
