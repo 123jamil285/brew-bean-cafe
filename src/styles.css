@@ -152,19 +152,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0.95rem 2rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  padding: 1rem 2rem;
+  font-family: var(--font-button);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
-  border-radius: 999px;
+  border-radius: 12px;
   background-color: var(--espresso);
-  color: var(--cream);
-  transition: all 0.5s var(--ease-lux);
+  color: #ffffff;
+  transition: all 0.45s var(--ease-lux);
   &:hover {
-    background-color: color-mix(in oklab, var(--espresso) 80%, var(--brass));
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
+    background-color: var(--brass);
+    color: #2b2b2b;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-lift);
   }
 }
 
@@ -173,19 +175,36 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0.95rem 2rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  padding: 1rem 2rem;
+  font-family: var(--font-button);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid color-mix(in oklab, var(--brass) 60%, transparent);
+  border-radius: 12px;
+  border: 2px solid color-mix(in oklab, var(--coffee) 70%, transparent);
+  background-color: transparent;
   color: inherit;
-  transition: all 0.5s var(--ease-lux);
+  transition: all 0.45s var(--ease-lux);
   &:hover {
-    border-color: var(--brass);
-    background-color: color-mix(in oklab, var(--brass) 14%, transparent);
-    transform: translateY(-2px);
+    border-color: var(--coffee);
+    background-color: var(--coffee);
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility card-lux {
+  border-radius: 20px;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.5s var(--ease-lux);
+  overflow: hidden;
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
   }
 }
 
