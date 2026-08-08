@@ -108,7 +108,10 @@ function Home() {
               <Link to="/reserve" className="btn-lux bg-cream text-espresso hover:bg-brass-soft">
                 Reserve a Table
               </Link>
-              <Link to="/menu" className="btn-ghost-lux text-cream">
+              <Link
+                to="/menu"
+                className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
+              >
                 View the Menu <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
