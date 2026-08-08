@@ -93,7 +93,7 @@ function ContactPage() {
             <Reveal>
               <h2 className="font-display text-4xl md:text-5xl">Get in touch</h2>
             </Reveal>
-            <ul className="mt-10 grid gap-px overflow-hidden rounded-sm bg-border">
+            <ul className="mt-10 grid gap-px overflow-hidden rounded-[20px] bg-border">
               {channels.map((c, i) => (
                 <li key={c.label} className="bg-background">
                   <Reveal delay={i * 100}>
@@ -134,7 +134,7 @@ function ContactPage() {
 
           <div>
             <Reveal delay={100}>
-              <aside className="rounded-sm border border-border bg-card p-8 md:p-10">
+              <aside className="rounded-[20px] border border-border bg-card p-8 md:p-10">
                 <BrandLogo className="h-11" />
                 <ul className="mt-8 space-y-6 text-sm">
                   <li className="flex gap-4">
@@ -177,7 +177,7 @@ function ContactPage() {
             </Reveal>
 
             <Reveal delay={180}>
-              <div className="mt-8 overflow-hidden rounded-sm border border-border">
+              <div className="mt-8 overflow-hidden rounded-[20px] border border-border">
                 <iframe
                   title="Map showing Brew & Bean Cafe on Cedar Lane"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-122.4241%2C37.7994%2C-122.3971%2C37.8106&layer=mapnik"

@@ -56,7 +56,7 @@ export function WhyChooseUs() {
             </div>
           </Reveal>
 
-          <ul className="grid gap-px overflow-hidden rounded-sm bg-border sm:grid-cols-2">
+          <ul className="grid gap-px overflow-hidden rounded-[20px] bg-border sm:grid-cols-2">
             {reasons.map((r, i) => (
               <li key={r.title} className="bg-background">
                 <Reveal delay={i * 110}>

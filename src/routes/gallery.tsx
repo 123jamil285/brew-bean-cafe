@@ -69,7 +69,7 @@ function GalleryPage() {
           {shots.map((s, i) => (
             <li key={s.label} className="mb-4 break-inside-avoid">
               <Reveal delay={(i % 4) * 90}>
-                <figure className="group relative overflow-hidden rounded-sm">
+                <figure className="group relative overflow-hidden rounded-[20px]">
                   <img
                     src={s.src}
                     alt={s.alt}
