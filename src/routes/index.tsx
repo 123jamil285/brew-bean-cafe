@@ -191,7 +191,7 @@ function Home() {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <Link to="/menu" className="btn-ghost-lux text-cream">
+              <Link to="/menu" className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso">
                 Full Menu
               </Link>
             </Reveal>
