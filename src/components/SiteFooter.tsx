@@ -83,7 +83,37 @@ export function SiteFooter() {
             </ul>
           </div>
 
+          <div>
+            <p className="eyebrow">Newsletter</p>
+            <p className="mt-6 text-sm leading-relaxed opacity-80">
+              New origins, tasting nights and seasonal blends — one quiet email a month.
+            </p>
+            <form
+              className="mt-6 flex items-center gap-2"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <label htmlFor="footer-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="footer-email"
+                type="email"
+                required
+                placeholder="you@email.com"
+                className="min-w-0 flex-1 rounded-xl border border-cream/25 bg-cream/5 px-4 py-3 text-sm text-cream placeholder:text-cream/45 outline-none transition-all focus:border-brass focus:ring-2 focus:ring-brass/60"
+              />
+              <button
+                type="submit"
+                aria-label="Subscribe"
+                className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brass text-espresso transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              >
+                <Send className="h-4 w-4" />
+              </button>
+            </form>
+          </div>
+
         </div>
+
 
         <div className="mt-16 flex flex-col gap-3 border-t border-cream/15 pt-8 text-[0.65rem] tracking-[0.2em] uppercase opacity-50 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Brew &amp; Bean Cafe</span>
