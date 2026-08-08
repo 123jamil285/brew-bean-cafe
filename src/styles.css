@@ -112,8 +112,19 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  input,
+  textarea,
+  select {
+    border-radius: var(--radius);
   }
 }
 
