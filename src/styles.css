@@ -47,7 +47,8 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.75rem; /* 12px — buttons/inputs */
+  --radius-card: 20px;
 
   /* Official brand palette */
   --espresso: #3b2a1f;
@@ -78,8 +79,8 @@
   --ring: #d4a373;
 
 
-  --shadow-soft: 0 30px 60px -35px color-mix(in oklab, var(--espresso) 55%, transparent);
-  --shadow-lift: 0 40px 80px -40px color-mix(in oklab, var(--espresso) 70%, transparent);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 20px 45px rgba(0, 0, 0, 0.12);
   --gradient-dark: linear-gradient(
     160deg,
     color-mix(in oklab, var(--espresso) 96%, black) 0%,
