@@ -1,14 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Coffee, Leaf, Flame, Star } from "lucide-react";
+import { ArrowRight, Coffee, Leaf, Flame } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { BrandLogo } from "@/components/BrandLogo";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { HomeHero } from "@/components/HomeHero";
+import { AboutSection } from "@/components/AboutSection";
+import { SignatureCoffee } from "@/components/SignatureCoffee";
+import { MenuPreview } from "@/components/MenuPreview";
+import { HomeGallery } from "@/components/HomeGallery";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
+import { ContactSection } from "@/components/ContactSection";
 
 
-import heroImg from "@/assets/hero.jpg";
 import interiorImg from "@/assets/interior.jpg";
-import beansImg from "@/assets/beans.jpg";
-import menuImg from "@/assets/menu.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,27 +32,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
-
-const signatures = [
-  {
-    name: "Velvet Cortado",
-    note: "Ethiopia Guji · 4oz",
-    price: "$5.50",
-    copy: "Cocoa nib sweetness pulled short, folded into silk-textured milk.",
-  },
-  {
-    name: "Harbour Pour Over",
-    note: "Colombia Huila · V60",
-    price: "$7.00",
-    copy: "Six minutes of patience. Jasmine, ripe apricot, a clean caramel finish.",
-  },
-  {
-    name: "Burnt Honey Latte",
-    note: "House blend · 8oz",
-    price: "$6.25",
-    copy: "Slow-caramelised honey, sea salt, and a double ristretto base.",
-  },
-];
 
 const pillars = [
   {
@@ -72,70 +54,13 @@ const pillars = [
 function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="surface-dark grain relative min-h-[100svh] overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Barista pouring latte art into a ceramic cup"
-          width={1600}
-          height={1200}
-          className="absolute inset-0 h-full w-full object-cover opacity-45"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-espresso via-espresso/70 to-espresso/40" />
+      <HomeHero />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 pt-32 pb-20 md:px-10">
-          <Reveal>
-            <BrandLogo priority onDark className="h-14 md:h-20" />
-          </Reveal>
-          <Reveal delay={80}>
-            <p className="eyebrow mt-8">Est. 2012 · Old Harbour District</p>
-          </Reveal>
+      <AboutSection />
 
-          <Reveal delay={120}>
-            <h1 className="mt-8 max-w-4xl font-display text-[clamp(3rem,10vw,8.5rem)] leading-[0.88] tracking-[-0.03em]">
-              Brewed with passion,
-              <span className="block italic text-brass-soft">served with love.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={240}>
-            <p className="mt-10 max-w-md text-base leading-relaxed opacity-70">
-              A small roastery and slow bar where single-origin coffee is treated like
-              wine — sourced by hand, roasted in batches, poured without hurry.
-            </p>
-          </Reveal>
-          <Reveal delay={340}>
-            <div className="mt-12 flex flex-wrap gap-4">
-              <Link to="/reserve" className="btn-lux bg-cream text-espresso hover:bg-brass-soft">
-                Reserve a Table
-              </Link>
-              <Link
-                to="/menu"
-                className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
-              >
-                View the Menu <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-          </Reveal>
+      <SignatureCoffee />
 
-          <Reveal delay={460}>
-            <dl className="mt-24 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-10 border-t border-cream/15 pt-10 sm:grid-cols-4">
-              {[
-                ["14", "Origin lots"],
-                ["8 days", "Max roast age"],
-                ["4.9", "Guest rating"],
-                ["12 yrs", "On this corner"],
-              ].map(([v, l]) => (
-                <div key={l}>
-                  <dt className="font-display text-3xl text-brass-soft">{v}</dt>
-                  <dd className="mt-2 text-[0.6rem] tracking-[0.24em] uppercase opacity-60">
-                    {l}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-        </div>
-      </section>
+      <MenuPreview />
 
       {/* Philosophy */}
       <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
@@ -285,50 +210,9 @@ function Home() {
       {/* Why choose us */}
       <WhyChooseUs />
 
-      {/* Testimonials */}
+      <HomeGallery />
 
-      <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
-          <Reveal>
-            <p className="eyebrow text-center">Guest Book</p>
-          </Reveal>
-          <div className="mt-16 grid gap-12 md:grid-cols-3">
-            {[
-              {
-                q: "The cortado here ruined every other cortado for me. The room is even better than the coffee.",
-                n: "Amara O.",
-                r: "Regular since 2019",
-              },
-              {
-                q: "I've taken three clients here and signed all three. Something about the light at 10am.",
-                n: "Daniel K.",
-                r: "Architect",
-              },
-              {
-                q: "They remember my order, my dog's name, and which table I like. That's the whole review.",
-                n: "Priya S.",
-                r: "Neighbour",
-              },
-            ].map((t, i) => (
-              <Reveal key={t.n} delay={i * 130}>
-                <figure className="h-full">
-                  <div className="flex gap-1 text-accent">
-                    {Array.from({ length: 5 }).map((_, k) => (
-                      <Star key={k} className="h-3.5 w-3.5 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="mt-6 font-display text-2xl leading-snug">
-                    “{t.q}”
-                  </blockquote>
-                  <figcaption className="mt-6 text-[0.6rem] tracking-[0.24em] uppercase text-muted-foreground">
-                    {t.n} · {t.r}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialSlider />
 
       {/* CTA */}
       <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
@@ -340,18 +224,29 @@ function Home() {
                 A table is waiting
                 <span className="block italic text-brass-soft">for your slow morning.</span>
               </h2>
+              <p className="mx-auto mt-8 max-w-xl leading-relaxed opacity-75">
+                Experience unforgettable coffee moments — reserve your table today.
+              </p>
               <div className="mt-12 flex flex-wrap justify-center gap-4">
                 <Link
                   to="/reserve"
                   className="btn-lux bg-cream text-espresso hover:bg-brass-soft"
                 >
-                  Book a Table
+                  Book Now
+                </Link>
+                <Link
+                  to="/contact"
+                  className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
+                >
+                  Contact Us
                 </Link>
               </div>
             </div>
           </div>
         </Reveal>
       </section>
+
+      <ContactSection />
     </>
   );
 }
