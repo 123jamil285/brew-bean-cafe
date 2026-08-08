@@ -102,64 +102,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Signature menu */}
-      <section className="surface-dark grain">
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
-          <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
-            <Reveal>
-              <div>
-                <p className="eyebrow">Signatures</p>
-                <h2 className="mt-6 font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.95]">
-                  Three pours worth
-                  <span className="block italic text-brass-soft">the walk over.</span>
-                </h2>
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <Link to="/menu" className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso">
-                Full Menu
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="mt-20 grid gap-px sm:grid-cols-3">
-            {signatures.map((s, i) => (
-              <Reveal key={s.name} delay={i * 130}>
-                <article className="group h-full border-t border-cream/15 pt-10 transition-colors hover:border-brass sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0 sm:first:border-l-0 sm:first:pl-0">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="text-2xl">{s.name}</h3>
-                    <span className="font-display text-xl text-brass-soft">{s.price}</span>
-                  </div>
-                  <p className="mt-2 text-[0.6rem] tracking-[0.24em] uppercase opacity-50">
-                    {s.note}
-                  </p>
-                  <p className="mt-6 text-sm leading-relaxed opacity-70">{s.copy}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={200}>
-            <div className="mt-24 grid gap-px overflow-hidden sm:grid-cols-3">
-              {[beansImg, menuImg, interiorImg].map((src, i) => (
-                <div key={i} className="overflow-hidden">
-                  <img
-                    src={src}
-                    alt={
-                      ["Roasted coffee beans", "Espresso and croissants", "Cafe interior"][i]
-                    }
-                    loading="lazy"
-                    width={1200}
-                    height={900}
-                    className="h-64 w-full object-cover grayscale-[25%] transition-all duration-1000 hover:scale-105 hover:grayscale-0 md:h-80"
-                  />
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* The room */}
       <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
