@@ -242,7 +242,7 @@ function Home() {
               loading="lazy"
               width={1400}
               height={1000}
-              className="w-full rounded-sm object-cover shadow-[var(--shadow-soft)]"
+              className="w-full rounded-[20px] object-cover shadow-[var(--shadow-soft)]"
             />
           </Reveal>
           <Reveal delay={140}>
@@ -330,7 +330,7 @@ function Home() {
       {/* CTA */}
       <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
         <Reveal>
-          <div className="surface-dark grain relative overflow-hidden rounded-sm px-8 py-20 text-center md:px-20 md:py-28">
+          <div className="surface-dark grain relative overflow-hidden rounded-[20px] px-8 py-20 text-center md:px-20 md:py-28">
             <div className="relative z-10">
               <p className="eyebrow">Reservations</p>
               <h2 className="mx-auto mt-8 max-w-3xl font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95]">
