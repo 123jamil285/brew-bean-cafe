@@ -15,7 +15,7 @@ export function AboutSection() {
   return (
     <section id="about" className="mx-auto w-full max-w-7xl scroll-mt-24 px-6 py-28 md:px-10 md:py-36">
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-        <Reveal>
+        <Reveal variant="slide-left" duration={0.7}>
           <img
             src={interiorImg}
             alt="The warm oak and linen interior of Brew & Bean Cafe"
@@ -27,7 +27,7 @@ export function AboutSection() {
         </Reveal>
 
         <div>
-          <Reveal delay={120}>
+          <Reveal variant="slide-right" delay={120} duration={0.7}>
             <p className="eyebrow">About Brew &amp; Bean</p>
             <div className="rule-brass mt-6" />
             <h2 className="mt-8 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
@@ -46,7 +46,7 @@ export function AboutSection() {
             </p>
           </Reveal>
 
-          <Reveal delay={220}>
+          <Reveal variant="slide-right" delay={220}>
             <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-10">
               {stats.map((s) => (
                 <div key={s.label}>
@@ -61,7 +61,7 @@ export function AboutSection() {
             </dl>
           </Reveal>
 
-          <Reveal delay={300}>
+          <Reveal variant="slide-right" delay={300}>
             <Link to="/about" className="mt-10 inline-flex btn-ghost-lux">
               Learn More <ArrowRight className="h-3.5 w-3.5" />
             </Link>
