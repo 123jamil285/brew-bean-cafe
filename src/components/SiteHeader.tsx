@@ -1,7 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { transitionLux } from "@/lib/motion";
 import { BrandLogo } from "./BrandLogo";
+
 
 
 const links = [
