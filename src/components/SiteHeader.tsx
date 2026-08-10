@@ -68,9 +68,10 @@ export function SiteHeader() {
 
         <div className="hidden justify-end lg:flex">
           <motion.div
-            whileHover={reduced ? undefined : { scale: 1.05 }}
-            whileTap={reduced ? undefined : { scale: 0.97 }}
+            whileHover={{ scale: reduced ? 1 : 1.05 }}
+            whileTap={{ scale: reduced ? 1 : 0.97 }}
             transition={transitionLux(0.4)}
+
           >
             <Link
               to="/reserve"
