@@ -128,7 +128,10 @@ function RootComponent() {
       <SiteHeader />
       <main>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
+
       </main>
       <SiteFooter />
     </QueryClientProvider>
