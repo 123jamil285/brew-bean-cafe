@@ -20,6 +20,7 @@ const links = [
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const reduced = useReducedMotion() ?? false;
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => setOpen(false), [pathname]);
@@ -32,12 +33,16 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={reduced ? { opacity: 0 } : { opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={transitionLux(0.7, 0.05)}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border/70 py-3 text-foreground"
-          : "border-b border-transparent py-6 text-cream"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/70 py-3 text-foreground shadow-[var(--shadow-soft)]"
+          : "border-b border-transparent bg-transparent py-6 text-cream"
       }`}
+
     >
       <div className="mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-6 px-6 md:px-10 lg:grid-cols-[1fr_auto_1fr]">
         <Link to="/" className="flex min-w-0 items-center" aria-label="Brew & Bean Cafe home">
