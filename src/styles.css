@@ -299,3 +299,54 @@
 @media (prefers-reduced-motion: reduce) {
   .float-slow, .float-bean, .steam-puff, .scroll-cue { animation: none !important }
 }
+
+/* ---- Animation system utilities ---- */
+@utility glow-brass {
+  transition:
+    box-shadow 0.5s var(--ease-lux),
+    transform 0.5s var(--ease-lux);
+  &:hover {
+    box-shadow: 0 10px 30px color-mix(in oklab, var(--brass) 45%, transparent);
+  }
+}
+
+@utility pulse-soft {
+  animation: lux-pulse-soft 3.2s var(--ease-lux) infinite;
+}
+
+@keyframes lux-pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes lux-draw-check {
+  from {
+    stroke-dashoffset: 28;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@utility draw-check {
+  stroke-dasharray: 28;
+  animation: lux-draw-check 0.6s var(--ease-lux) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

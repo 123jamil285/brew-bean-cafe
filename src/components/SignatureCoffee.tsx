@@ -56,8 +56,8 @@ export function SignatureCoffee() {
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {drinks.map((d, i) => (
-            <Reveal key={d.name} delay={i * 110} className="h-full">
-              <article className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[var(--shadow-lift)]">
+            <Reveal key={d.name} variant="scale-in" delay={i * 110} className="h-full">
+              <article className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-[var(--shadow-lift)]">
                 <div className="overflow-hidden">
                   <img
                     src={d.img}
@@ -81,7 +81,7 @@ export function SignatureCoffee() {
                     <span className="font-display text-2xl text-accent">{d.price}</span>
                     <Link
                       to="/reserve"
-                      className="rounded-[12px] bg-primary px-5 py-2.5 font-[family-name:var(--font-button)] text-[0.7rem] font-semibold tracking-[0.12em] uppercase text-primary-foreground transition-all duration-500 hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground"
+                      className="glow-brass rounded-[12px] bg-primary px-5 py-2.5 font-[family-name:var(--font-button)] text-[0.7rem] font-semibold tracking-[0.12em] uppercase text-primary-foreground transition-all duration-500 hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground"
                     >
                       Order
                     </Link>

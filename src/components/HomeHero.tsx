@@ -41,7 +41,7 @@ export function HomeHero() {
           {/* Left */}
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brass/40 bg-cream/5 px-4 py-2 text-[0.65rem] font-semibold tracking-[0.28em] uppercase text-brass-soft backdrop-blur-sm">
+              <span className="pulse-soft inline-flex items-center gap-2 rounded-full border border-brass/40 bg-cream/5 px-4 py-2 text-[0.65rem] font-semibold tracking-[0.28em] uppercase text-brass-soft backdrop-blur-sm">
                 <Coffee className="h-3.5 w-3.5" aria-hidden="true" />
                 Luxury Coffee Experience
               </span>

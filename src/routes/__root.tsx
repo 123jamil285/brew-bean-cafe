@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
+import { PageTransition } from "../components/PageTransition";
+
 
 
 function NotFoundComponent() {
@@ -126,7 +128,10 @@ function RootComponent() {
       <SiteHeader />
       <main>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
+
       </main>
       <SiteFooter />
     </QueryClientProvider>
