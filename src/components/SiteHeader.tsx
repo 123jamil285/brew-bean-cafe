@@ -62,12 +62,18 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden justify-end lg:flex">
-          <Link
-            to="/reserve"
-            className={scrolled ? "btn-lux" : "btn-lux bg-cream text-espresso hover:bg-brass-soft"}
+          <motion.div
+            whileHover={reduced ? undefined : { scale: 1.05 }}
+            whileTap={reduced ? undefined : { scale: 0.97 }}
+            transition={transitionLux(0.4)}
           >
-            Book a Table
-          </Link>
+            <Link
+              to="/reserve"
+              className={`glow-brass ${scrolled ? "btn-lux" : "btn-lux bg-cream text-espresso hover:bg-brass-soft"}`}
+            >
+              Book a Table
+            </Link>
+          </motion.div>
         </div>
 
 
@@ -75,32 +81,60 @@ export function SiteHeader() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border lg:hidden"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border transition-transform duration-300 hover:scale-105 lg:hidden"
         >
           {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </div>
 
-      {open && (
-        <div className="mx-6 mt-4 rounded-lg border border-border bg-card p-6 lg:hidden">
-          <nav className="flex flex-col gap-5">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="text-[0.75rem] font-semibold tracking-[0.22em] uppercase text-muted-foreground"
-                activeProps={{ className: "text-foreground" }}
-                activeOptions={{ exact: l.to === "/" }}
-              >
-                {l.label}
-              </Link>
-            ))}
-            <Link to="/reserve" className="btn-lux mt-2">
-              Book a Table
-            </Link>
-          </nav>
-        </div>
-      )}
-    </header>
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.button
+              type="button"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={transitionLux(0.4)}
+              className="fixed inset-0 z-40 bg-espresso/60 backdrop-blur-sm lg:hidden"
+            />
+            <motion.div
+              initial={reduced ? { opacity: 0 } : { x: "100%" }}
+              animate={reduced ? { opacity: 1 } : { x: 0 }}
+              exit={reduced ? { opacity: 0 } : { x: "100%" }}
+              transition={transitionLux(0.5)}
+              className="fixed inset-y-0 right-0 z-50 w-[78%] max-w-xs border-l border-border bg-card p-8 pt-24 shadow-[var(--shadow-lift)] lg:hidden"
+              style={{ willChange: "transform" }}
+            >
+              <nav className="flex flex-col gap-6">
+                {links.map((l, i) => (
+                  <motion.div
+                    key={l.to}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={transitionLux(0.4, 0.08 + i * 0.05)}
+                  >
+                    <Link
+                      to={l.to}
+                      className="link-underline text-[0.75rem] font-semibold tracking-[0.22em] uppercase text-muted-foreground"
+                      activeProps={{ className: "text-foreground" }}
+                      activeOptions={{ exact: l.to === "/" }}
+                    >
+                      {l.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <Link to="/reserve" className="btn-lux mt-2 text-center">
+                  Book a Table
+                </Link>
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
+
