@@ -105,7 +105,7 @@ function Home() {
       {/* The room */}
       <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
-          <Reveal>
+          <Reveal variant="slide-left" duration={0.7}>
             <img
               src={interiorImg}
               alt="Warm oak and linen interior of Brew & Bean Cafe"
@@ -115,7 +115,7 @@ function Home() {
               className="w-full rounded-[20px] object-cover shadow-[var(--shadow-soft)]"
             />
           </Reveal>
-          <Reveal delay={140}>
+          <Reveal variant="slide-right" delay={140} duration={0.7}>
             <div>
               <p className="eyebrow">The Room</p>
               <div className="rule-brass mt-6" />
@@ -158,7 +158,7 @@ function Home() {
 
       {/* CTA */}
       <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
-        <Reveal>
+        <Reveal variant="scale-in" duration={0.7}>
           <div className="surface-dark grain relative overflow-hidden rounded-[20px] px-8 py-20 text-center md:px-20 md:py-28">
             <div className="relative z-10">
               <p className="eyebrow">Reservations</p>
@@ -172,7 +172,7 @@ function Home() {
               <div className="mt-12 flex flex-wrap justify-center gap-4">
                 <Link
                   to="/reserve"
-                  className="btn-lux bg-cream text-espresso hover:bg-brass-soft"
+                  className="btn-lux glow-brass bg-cream text-espresso hover:bg-brass-soft"
                 >
                   Book Now
                 </Link>
