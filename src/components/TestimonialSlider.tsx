@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { motion } from "motion/react";
+import { transitionLux } from "@/lib/motion";
 import { Reveal } from "@/components/Reveal";
 
 import guest1 from "@/assets/guest-1.jpg";
@@ -64,9 +66,11 @@ export function TestimonialSlider() {
             className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
-            {reviews.map((r) => (
+            {reviews.map((r, ri) => (
               <figure key={r.name} className="w-full shrink-0 px-2">
-                <img
+                <motion.img
+                  animate={{ opacity: index === ri ? 1 : 0.35, scale: index === ri ? 1 : 0.94 }}
+                  transition={transitionLux(0.6)}
                   src={r.img}
                   alt={r.name}
                   loading="lazy"
@@ -76,7 +80,13 @@ export function TestimonialSlider() {
                 />
                 <div className="mt-6 flex justify-center gap-1 text-brass">
                   {Array.from({ length: 5 }).map((_, k) => (
-                    <Star key={k} className="h-4 w-4 fill-current" aria-hidden="true" />
+                    <motion.span
+                      key={k}
+                      animate={index === ri ? { scale: [0.6, 1.15, 1], opacity: 1 } : { scale: 1, opacity: 0.5 }}
+                      transition={transitionLux(0.5, 0.06 * k)}
+                    >
+                      <Star className="h-4 w-4 fill-current" aria-hidden="true" />
+                    </motion.span>
                   ))}
                 </div>
                 <blockquote className="mx-auto mt-8 max-w-3xl font-display text-[clamp(1.35rem,2.6vw,2rem)] leading-snug">

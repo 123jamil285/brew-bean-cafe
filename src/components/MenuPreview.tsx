@@ -106,7 +106,7 @@ export function MenuPreview() {
 
       <div key={active} className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {current.items.map((item, i) => (
-          <Reveal key={`${active}-${item.name}`} delay={i * 90} className="h-full">
+          <Reveal key={`${active}-${item.name}`} delay={i * 90} duration={0.5} className="h-full">
             <article className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-lift)]">
               <div className="overflow-hidden">
                 <img
@@ -115,7 +115,7 @@ export function MenuPreview() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="h-48 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                  className="h-48 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
@@ -123,7 +123,9 @@ export function MenuPreview() {
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {item.copy}
                 </p>
-                <span className="mt-6 font-display text-xl text-accent">{item.price}</span>
+                <span className="mt-6 font-display text-xl text-accent transition-colors duration-500 group-hover:text-coffee">
+                  {item.price}
+                </span>
               </div>
             </article>
           </Reveal>
