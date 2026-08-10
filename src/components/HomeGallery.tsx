@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { transitionLux } from "@/lib/motion";
 import { X } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
@@ -78,8 +80,13 @@ export function HomeGallery() {
         </div>
       </div>
 
+      <AnimatePresence>
       {active && (
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={transitionLux(0.4)}
           role="dialog"
           aria-modal="true"
           aria-label={active.caption}
@@ -94,7 +101,12 @@ export function HomeGallery() {
           >
             <X className="h-5 w-5" />
           </button>
-          <figure className="max-h-[85vh] w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
+          <motion.figure
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={transitionLux(0.5)}
+            className="max-h-[85vh] w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <img
               src={active.src}
               alt={active.caption}
@@ -103,9 +115,10 @@ export function HomeGallery() {
             <figcaption className="mt-5 text-center text-[0.65rem] tracking-[0.24em] uppercase text-cream/70">
               {active.caption}
             </figcaption>
-          </figure>
-        </div>
+          </motion.figure>
+        </motion.div>
       )}
+      </AnimatePresence>
     </section>
   );
 }
