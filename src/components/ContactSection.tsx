@@ -135,14 +135,47 @@ export function ContactSection() {
                 />
               </label>
             </div>
-            <button type="submit" className="btn-lux mt-8 w-full sm:w-auto">
+            <button
+              type="submit"
+              className="btn-lux glow-brass mt-8 w-full transition-transform duration-500 hover:-translate-y-1 sm:w-auto"
+            >
               Send Message
             </button>
-            {sent && (
-              <p className="mt-5 text-sm text-accent" role="status">
-                Thank you — we'll reply within one working day.
-              </p>
-            )}
+            <AnimatePresence>
+              {sent && (
+                <motion.p
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 8 }}
+                  transition={transitionLux(0.5)}
+                  className="mt-5 flex items-center gap-2 text-sm text-accent"
+                  role="status"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      opacity="0.35"
+                    />
+                    <path
+                      d="M7.5 12.4l3 3 6-6.4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="draw-check"
+                    />
+                  </svg>
+                  Thank you — we'll reply within one working day.
+                </motion.p>
+              )}
+            </AnimatePresence>
+
           </form>
         </Reveal>
       </div>
