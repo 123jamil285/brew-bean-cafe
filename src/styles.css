@@ -98,6 +98,13 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   body {
@@ -117,14 +124,50 @@
   }
 
   p {
-    font-size: 1.0625rem;
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
     line-height: 1.7;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
   }
 
   input,
   textarea,
   select {
     border-radius: var(--radius);
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+
+  @media (min-width: 768px) {
+    input,
+    textarea,
+    select {
+      font-size: 0.9375rem;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+}
+
+/* Responsive container: 95% mobile, 90% tablet, 1280px max on desktop */
+@utility container-lux {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (min-width: 480px) {
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    padding-inline: 5%;
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 2.5rem;
   }
 }
 
