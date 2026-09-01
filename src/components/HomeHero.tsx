@@ -52,7 +52,7 @@ export function HomeHero() {
             </Reveal>
 
             <Reveal delay={140}>
-              <h1 className="mt-8 max-w-2xl font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.92] tracking-[-0.03em]">
+              <h1 className="mt-8 max-w-2xl font-display text-[clamp(2.25rem,6vw,4rem)] leading-[0.92] tracking-[-0.03em]">
                 Freshly Brewed Coffee
                 <span className="block italic text-brass-soft">Made with Passion.</span>
               </h1>

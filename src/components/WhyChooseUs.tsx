@@ -60,7 +60,7 @@ export function WhyChooseUs() {
               <div className="rule-brass mt-6" />
               <h2
                 id="why-heading"
-                className="mt-8 font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[0.98]"
+                className="mt-8 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.98]"
               >
                 Six reasons
                 <span className="block italic text-muted-foreground">

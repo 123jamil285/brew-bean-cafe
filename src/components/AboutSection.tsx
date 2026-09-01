@@ -30,7 +30,7 @@ export function AboutSection() {
           <Reveal variant="slide-right" delay={120} duration={0.7}>
             <p className="eyebrow">About Brew &amp; Bean</p>
             <div className="rule-brass mt-6" />
-            <h2 className="mt-8 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+            <h2 className="mt-8 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
               Where every cup
               <span className="block italic text-muted-foreground">tells a story.</span>
             </h2>

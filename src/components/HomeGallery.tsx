@@ -43,7 +43,7 @@ export function HomeGallery() {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Gallery</p>
-            <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+            <h2 className="mt-6 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
               Inside the room
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">

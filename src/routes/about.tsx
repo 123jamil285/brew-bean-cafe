@@ -122,7 +122,7 @@ function AboutPage() {
 
       <section className="container-lux mx-auto w-full max-w-7xl py-24 text-center md:py-32">
         <Reveal>
-          <h2 className="mx-auto max-w-2xl font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.95]">
+          <h2 className="mx-auto max-w-2xl font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.95]">
             Come see the roaster
             <span className="block italic text-muted-foreground">on a Tuesday.</span>
           </h2>

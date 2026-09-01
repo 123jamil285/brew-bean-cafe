@@ -45,7 +45,7 @@ export function SignatureCoffee() {
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Signatures</p>
-            <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+            <h2 className="mt-6 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
               Our Signature Coffee
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -54,7 +54,7 @@ export function SignatureCoffee() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           {drinks.map((d, i) => (
             <Reveal key={d.name} variant="scale-in" delay={i * 110} className="h-full">
               <article className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] hover:shadow-[var(--shadow-lift)]">

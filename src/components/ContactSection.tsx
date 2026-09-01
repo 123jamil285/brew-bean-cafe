@@ -28,7 +28,7 @@ export function ContactSection() {
         <div className="max-w-2xl">
           <p className="eyebrow">Contact</p>
           <div className="rule-brass mt-6" />
-          <h2 className="mt-8 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+          <h2 className="mt-8 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
             Come say hello
           </h2>
         </div>

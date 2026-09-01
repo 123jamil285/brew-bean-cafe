@@ -56,7 +56,7 @@ export function TestimonialSlider() {
       <div className="relative z-10 container-lux mx-auto w-full max-w-5xl py-24 text-center md:py-32">
         <Reveal>
           <p className="eyebrow">Guest Book</p>
-          <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+          <h2 className="mt-6 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
             Loved by the neighbourhood
           </h2>
         </Reveal>
