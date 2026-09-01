@@ -66,11 +66,11 @@ export function MenuPreview() {
   const current = categories.find((c) => c.key === active) ?? categories[0]!;
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+    <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
       <Reveal>
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Menu Preview</p>
-          <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+          <h2 className="mt-6 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
             A taste of the counter
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -92,7 +92,7 @@ export function MenuPreview() {
               type="button"
               aria-selected={active === c.key}
               onClick={() => setActive(c.key)}
-              className={`rounded-[12px] px-6 py-2.5 font-[family-name:var(--font-button)] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-all duration-500 ${
+              className={`min-h-11 rounded-[12px] px-4 py-2.5 sm:px-6 font-[family-name:var(--font-button)] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-all duration-500 ${
                 active === c.key
                   ? "bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
                   : "text-muted-foreground hover:text-foreground"
@@ -104,7 +104,7 @@ export function MenuPreview() {
         </div>
       </Reveal>
 
-      <div key={active} className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div key={active} className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
         {current.items.map((item, i) => (
           <Reveal key={`${active}-${item.name}`} delay={i * 90} duration={0.5} className="h-full">
             <article className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--shadow-lift)]">

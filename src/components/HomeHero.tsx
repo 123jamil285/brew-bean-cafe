@@ -36,8 +36,8 @@ export function HomeHero() {
       />
       <div className="absolute inset-0 bg-linear-to-t from-espresso via-espresso/75 to-espresso/45" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 pt-32 pb-24 md:px-10">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+      <div className="relative z-10 container-lux mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center pt-28 pb-20 md:pt-32 md:pb-24">
+        <div className="grid items-center gap-12 text-center sm:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:text-left">
           {/* Left */}
           <div>
             <Reveal>
@@ -48,31 +48,31 @@ export function HomeHero() {
             </Reveal>
 
             <Reveal delay={70}>
-              <BrandLogo priority onDark className="mt-8 h-12 md:h-16" />
+              <BrandLogo priority onDark className="mx-auto mt-8 h-10 sm:h-12 md:h-16 lg:mx-0" />
             </Reveal>
 
             <Reveal delay={140}>
-              <h1 className="mt-8 max-w-2xl font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.92] tracking-[-0.03em]">
+              <h1 className="mx-auto mt-6 max-w-2xl font-display lg:mx-0 text-[clamp(2.25rem,6vw,4rem)] leading-[0.92] tracking-[-0.03em]">
                 Freshly Brewed Coffee
                 <span className="block italic text-brass-soft">Made with Passion.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={220}>
-              <p className="mt-8 max-w-md text-base leading-relaxed opacity-75">
+              <p className="mx-auto mt-6 max-w-md leading-relaxed opacity-75 lg:mx-0">
                 Experience handcrafted coffee made from premium single-origin beans,
                 served inside a warm and modern environment built for slow mornings.
               </p>
             </Reveal>
 
             <Reveal delay={300}>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link to="/menu" className="btn-lux bg-cream text-espresso hover:bg-brass-soft">
+              <div className="mx-auto mt-9 grid w-full max-w-xs gap-3 sm:mx-0 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4 lg:justify-start">
+                <Link to="/menu" className="btn-lux btn-block-sm bg-cream text-espresso hover:bg-brass-soft">
                   Explore Menu
                 </Link>
                 <Link
                   to="/reserve"
-                  className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
+                  className="btn-ghost-lux btn-block-sm border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
                 >
                   Book a Table <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
@@ -80,7 +80,7 @@ export function HomeHero() {
             </Reveal>
 
             <Reveal delay={380}>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-start">
                 <div className="flex gap-1 text-brass" aria-label="Rated 5 out of 5">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
@@ -136,7 +136,7 @@ export function HomeHero() {
         </div>
 
         <Reveal delay={440}>
-          <dl className="mt-20 grid max-w-4xl grid-cols-2 gap-x-8 gap-y-10 border-t border-cream/15 pt-10 sm:grid-cols-4">
+          <dl className="mt-16 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-8 border-t border-cream/15 pt-10 sm:gap-x-8 sm:gap-y-10 md:grid-cols-4">
             {[
               ["14", "Origin lots"],
               ["8 days", "Max roast age"],
@@ -144,7 +144,7 @@ export function HomeHero() {
               ["12 yrs", "On this corner"],
             ].map(([v, l]) => (
               <div key={l}>
-                <dt className="font-display text-3xl text-brass-soft">{v}</dt>
+                <dt className="font-display text-2xl text-brass-soft sm:text-3xl">{v}</dt>
                 <dd className="mt-2 text-[0.6rem] tracking-[0.24em] uppercase opacity-60">
                   {l}
                 </dd>

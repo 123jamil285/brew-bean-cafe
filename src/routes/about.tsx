@@ -42,7 +42,7 @@ function AboutPage() {
           height={1200}
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
+        <div className="relative z-10 container-lux mx-auto w-full max-w-7xl pt-44 pb-24 md:pt-52 md:pb-32">
           <Reveal>
             <p className="eyebrow">Since 2012</p>
           </Reveal>
@@ -55,8 +55,8 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
+      <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
+        <div className="grid gap-12 md:gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
           <Reveal>
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
               <p className="font-display text-3xl leading-snug text-foreground md:text-4xl">
@@ -77,7 +77,7 @@ function AboutPage() {
           </Reveal>
 
           <Reveal delay={140}>
-            <div className="grid gap-px sm:grid-cols-2">
+            <div className="grid gap-px md:grid-cols-2">
               <img
                 src={beansImg}
                 alt="Roasted coffee beans spilling from a jar"
@@ -100,7 +100,7 @@ function AboutPage() {
       </section>
 
       <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto w-full max-w-5xl px-6 py-24 md:px-10 md:py-32">
+        <div className="container-lux mx-auto w-full max-w-5xl py-24 md:py-32">
           <Reveal>
             <p className="eyebrow">Milestones</p>
           </Reveal>
@@ -120,19 +120,19 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-24 text-center md:px-10 md:py-32">
+      <section className="container-lux mx-auto w-full max-w-7xl py-24 text-center md:py-32">
         <Reveal>
-          <h2 className="mx-auto max-w-2xl font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.95]">
+          <h2 className="mx-auto max-w-2xl font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.95]">
             Come see the roaster
             <span className="block italic text-muted-foreground">on a Tuesday.</span>
           </h2>
         </Reveal>
         <Reveal delay={120}>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/reserve" className="btn-lux">
+            <Link to="/reserve" className="btn-lux btn-block-sm">
               Reserve a Table
             </Link>
-            <Link to="/menu" className="btn-ghost-lux">
+            <Link to="/menu" className="btn-ghost-lux btn-block-sm">
               See the Menu
             </Link>
           </div>

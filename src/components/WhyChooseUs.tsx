@@ -52,7 +52,7 @@ export function WhyChooseUs() {
       aria-labelledby="why-heading"
       className="border-y border-border bg-secondary/30"
     >
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <div className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
           <Reveal>
             <div className="lg:sticky lg:top-32">
@@ -60,7 +60,7 @@ export function WhyChooseUs() {
               <div className="rule-brass mt-6" />
               <h2
                 id="why-heading"
-                className="mt-8 font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[0.98]"
+                className="mt-8 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.98]"
               >
                 Six reasons
                 <span className="block italic text-muted-foreground">
@@ -74,11 +74,11 @@ export function WhyChooseUs() {
             </div>
           </Reveal>
 
-          <ul className="grid gap-px overflow-hidden rounded-[20px] bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-px overflow-hidden rounded-[20px] bg-border md:grid-cols-2 lg:grid-cols-3">
             {reasons.map((r, i) => (
               <li key={r.title} className="bg-background">
                 <Reveal delay={Math.min(i, 3) * 110}>
-                  <article className="group h-full p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-secondary/40 hover:shadow-[var(--shadow-lift)] md:p-10">
+                  <article className="group h-full p-6 transition-all sm:p-8 duration-500 hover:-translate-y-2 hover:bg-secondary/40 hover:shadow-[var(--shadow-lift)] md:p-10">
                     <r.icon
                       className="h-6 w-6 text-accent transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:scale-110"
                       aria-hidden="true"

@@ -13,7 +13,7 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="mx-auto w-full max-w-7xl scroll-mt-24 px-6 py-28 md:px-10 md:py-36">
+    <section id="about" className="container-lux mx-auto w-full max-w-7xl scroll-mt-24 py-28 md:py-36">
       <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <Reveal variant="slide-left" duration={0.7}>
           <img
@@ -30,7 +30,7 @@ export function AboutSection() {
           <Reveal variant="slide-right" delay={120} duration={0.7}>
             <p className="eyebrow">About Brew &amp; Bean</p>
             <div className="rule-brass mt-6" />
-            <h2 className="mt-8 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+            <h2 className="mt-8 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
               Where every cup
               <span className="block italic text-muted-foreground">tells a story.</span>
             </h2>

@@ -39,11 +39,11 @@ export function HomeGallery() {
 
   return (
     <section className="border-y border-border bg-secondary/30">
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <div className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Gallery</p>
-            <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">
+            <h2 className="mt-6 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.96]">
               Inside the room
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
@@ -52,7 +52,7 @@ export function HomeGallery() {
           </div>
         </Reveal>
 
-        <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
+        <div className="mt-16 columns-1 gap-5 sm:gap-6 md:columns-2 lg:columns-3 [&>*]:mb-6">
           {shots.map((s, i) => (
             <Reveal key={s.caption} delay={(i % 3) * 100}>
               <button
