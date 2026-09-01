@@ -64,7 +64,7 @@ function Home() {
 
       {/* Philosophy */}
       <section className="container-lux mx-auto w-full max-w-7xl py-28 md:py-40">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+        <div className="grid gap-12 md:gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <Reveal>
             <div className="lg:sticky lg:top-32">
               <p className="eyebrow">The Craft</p>
@@ -104,7 +104,7 @@ function Home() {
 
       {/* The room */}
       <section className="container-lux mx-auto w-full max-w-7xl py-28 md:py-40">
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+        <div className="grid items-center gap-12 md:gap-14 lg:grid-cols-2 lg:gap-24">
           <Reveal variant="slide-left" duration={0.7}>
             <img
               src={interiorImg}
@@ -159,26 +159,26 @@ function Home() {
       {/* CTA */}
       <section className="container-lux mx-auto w-full max-w-7xl py-28 md:py-40">
         <Reveal variant="scale-in" duration={0.7}>
-          <div className="surface-dark grain relative overflow-hidden rounded-[20px] px-8 py-20 text-center md:px-20 md:py-28">
+          <div className="surface-dark grain relative overflow-hidden rounded-[20px] px-6 py-16 text-center sm:px-10 sm:py-20 md:px-20 md:py-28">
             <div className="relative z-10">
               <p className="eyebrow">Reservations</p>
-              <h2 className="mx-auto mt-8 max-w-3xl font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95]">
+              <h2 className="mx-auto mt-8 max-w-3xl font-display text-[clamp(1.875rem,5vw,3.5rem)] leading-[0.95]">
                 A table is waiting
                 <span className="block italic text-brass-soft">for your slow morning.</span>
               </h2>
               <p className="mx-auto mt-8 max-w-xl leading-relaxed opacity-75">
                 Experience unforgettable coffee moments — reserve your table today.
               </p>
-              <div className="mt-12 flex flex-wrap justify-center gap-4">
+              <div className="mx-auto mt-10 grid w-full max-w-xs gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4">
                 <Link
                   to="/reserve"
-                  className="btn-lux glow-brass bg-cream text-espresso hover:bg-brass-soft"
+                  className="btn-lux btn-block-sm glow-brass bg-cream text-espresso hover:bg-brass-soft"
                 >
                   Book Now
                 </Link>
                 <Link
                   to="/contact"
-                  className="btn-ghost-lux border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
+                  className="btn-ghost-lux btn-block-sm border-cream/60 text-cream hover:border-cream hover:bg-cream hover:text-espresso"
                 >
                   Contact Us
                 </Link>

@@ -55,7 +55,7 @@ function ReservePage() {
       </section>
 
       <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
-        <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-24">
+        <div className="grid gap-12 md:gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-24">
           <Reveal>
             {sent ? (
               <div className="flex h-full min-h-72 flex-col items-start justify-center border border-accent/40 bg-secondary/40 p-10">
@@ -77,7 +77,7 @@ function ReservePage() {
                   setSent(true);
                 }}
               >
-                <div className="grid gap-10 sm:grid-cols-2">
+                <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
                   <div>
                     <label className={label} htmlFor="name">
                       Full name
@@ -146,7 +146,7 @@ function ReservePage() {
                   />
                 </div>
 
-                <button type="submit" className="btn-lux w-full sm:w-auto">
+                <button type="submit" className="btn-lux btn-block-sm">
                   Request Table
                 </button>
               </form>

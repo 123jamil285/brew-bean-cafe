@@ -56,7 +56,7 @@ function AboutPage() {
       </section>
 
       <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
+        <div className="grid gap-12 md:gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
           <Reveal>
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
               <p className="font-display text-3xl leading-snug text-foreground md:text-4xl">
@@ -77,7 +77,7 @@ function AboutPage() {
           </Reveal>
 
           <Reveal delay={140}>
-            <div className="grid gap-px sm:grid-cols-2">
+            <div className="grid gap-px md:grid-cols-2">
               <img
                 src={beansImg}
                 alt="Roasted coffee beans spilling from a jar"
@@ -129,10 +129,10 @@ function AboutPage() {
         </Reveal>
         <Reveal delay={120}>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link to="/reserve" className="btn-lux">
+            <Link to="/reserve" className="btn-lux btn-block-sm">
               Reserve a Table
             </Link>
-            <Link to="/menu" className="btn-ghost-lux">
+            <Link to="/menu" className="btn-ghost-lux btn-block-sm">
               See the Menu
             </Link>
           </div>

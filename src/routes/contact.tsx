@@ -88,7 +88,7 @@ function ContactPage() {
       </section>
 
       <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
-        <div className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
+        <div className="grid gap-12 md:gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
           <div>
             <Reveal>
               <h2 className="font-display text-4xl md:text-5xl">Get in touch</h2>
