@@ -195,9 +195,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 1rem 2rem;
+  padding: 0.875rem 1.5rem;
+  min-height: 48px;
   font-family: var(--font-button);
   font-size: 0.8125rem;
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
@@ -218,9 +222,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 1rem 2rem;
+  padding: 0.875rem 1.5rem;
+  min-height: 48px;
   font-family: var(--font-button);
   font-size: 0.8125rem;
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
@@ -391,5 +399,13 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Full-width, touch-friendly buttons on mobile */
+@utility btn-block-sm {
+  width: 100%;
+  @media (min-width: 640px) {
+    width: auto;
   }
 }
