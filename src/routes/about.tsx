@@ -42,7 +42,7 @@ function AboutPage() {
           height={1200}
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
+        <div className="relative z-10 container-lux mx-auto w-full max-w-7xl pt-44 pb-24 md:pt-52 md:pb-32">
           <Reveal>
             <p className="eyebrow">Since 2012</p>
           </Reveal>
@@ -55,7 +55,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
           <Reveal>
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
@@ -100,7 +100,7 @@ function AboutPage() {
       </section>
 
       <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto w-full max-w-5xl px-6 py-24 md:px-10 md:py-32">
+        <div className="container-lux mx-auto w-full max-w-5xl py-24 md:py-32">
           <Reveal>
             <p className="eyebrow">Milestones</p>
           </Reveal>
@@ -120,7 +120,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-24 text-center md:px-10 md:py-32">
+      <section className="container-lux mx-auto w-full max-w-7xl py-24 text-center md:py-32">
         <Reveal>
           <h2 className="mx-auto max-w-2xl font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.95]">
             Come see the roaster

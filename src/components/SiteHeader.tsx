@@ -44,7 +44,7 @@ export function SiteHeader() {
       }`}
 
     >
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-6 px-6 md:px-10 lg:grid-cols-[1fr_auto_1fr]">
+      <div className="container-lux mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-6 lg:grid-cols-[1fr_auto_1fr]">
         <Link to="/" className="flex min-w-0 items-center" aria-label="Brew & Bean Cafe home">
           <BrandLogo priority onDark={!scrolled} className={scrolled ? "h-10 md:h-11" : "h-9 md:h-10"} />
         </Link>

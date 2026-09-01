@@ -53,7 +53,7 @@ export function TestimonialSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 py-24 text-center md:px-10 md:py-32">
+      <div className="relative z-10 container-lux mx-auto w-full max-w-5xl py-24 text-center md:py-32">
         <Reveal>
           <p className="eyebrow">Guest Book</p>
           <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,4rem)] leading-[0.96]">

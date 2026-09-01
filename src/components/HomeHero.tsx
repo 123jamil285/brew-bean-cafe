@@ -36,7 +36,7 @@ export function HomeHero() {
       />
       <div className="absolute inset-0 bg-linear-to-t from-espresso via-espresso/75 to-espresso/45" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center px-6 pt-32 pb-24 md:px-10">
+      <div className="relative z-10 container-lux mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-center pt-32 pb-24">
         <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           {/* Left */}
           <div>

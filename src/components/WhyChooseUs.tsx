@@ -52,7 +52,7 @@ export function WhyChooseUs() {
       aria-labelledby="why-heading"
       className="border-y border-border bg-secondary/30"
     >
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <div className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
           <Reveal>
             <div className="lg:sticky lg:top-32">

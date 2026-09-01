@@ -68,7 +68,7 @@ function ContactPage() {
           height={1000}
           className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
+        <div className="relative z-10 container-lux mx-auto w-full max-w-7xl pt-44 pb-24 md:pt-52 md:pb-32">
           <Reveal>
             <p className="eyebrow">Contact</p>
           </Reveal>
@@ -87,7 +87,7 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <div className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
           <div>
             <Reveal>

@@ -63,7 +63,7 @@ function Home() {
       <MenuPreview />
 
       {/* Philosophy */}
-      <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
+      <section className="container-lux mx-auto w-full max-w-7xl py-28 md:py-40">
         <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <Reveal>
             <div className="lg:sticky lg:top-32">
@@ -103,7 +103,7 @@ function Home() {
       </section>
 
       {/* The room */}
-      <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
+      <section className="container-lux mx-auto w-full max-w-7xl py-28 md:py-40">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
           <Reveal variant="slide-left" duration={0.7}>
             <img
@@ -157,7 +157,7 @@ function Home() {
       <TestimonialSlider />
 
       {/* CTA */}
-      <section className="mx-auto w-full max-w-7xl px-6 py-28 md:px-10 md:py-40">
+      <section className="container-lux mx-auto w-full max-w-7xl py-28 md:py-40">
         <Reveal variant="scale-in" duration={0.7}>
           <div className="surface-dark grain relative overflow-hidden rounded-[20px] px-8 py-20 text-center md:px-20 md:py-28">
             <div className="relative z-10">

@@ -6,7 +6,7 @@ import { BrandLogo } from "./BrandLogo";
 export function SiteFooter() {
   return (
     <footer className="grain bg-coffee text-cream">
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
+      <div className="relative z-10 container-lux mx-auto w-full max-w-7xl py-24">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div className="max-w-sm">
             <BrandLogo onDark className="h-14" />

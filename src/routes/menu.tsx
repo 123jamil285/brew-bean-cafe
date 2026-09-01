@@ -76,7 +76,7 @@ function MenuPage() {
           height={900}
           className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
+        <div className="relative z-10 container-lux mx-auto w-full max-w-7xl pt-44 pb-24 md:pt-52 md:pb-32">
           <Reveal>
             <p className="eyebrow">The Menu</p>
           </Reveal>
@@ -95,7 +95,7 @@ function MenuPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-5xl px-6 py-24 md:px-10 md:py-32">
+      <section className="container-lux mx-auto w-full max-w-5xl py-24 md:py-32">
         <div className="space-y-24">
           {sections.map((s, si) => (
             <Reveal key={s.title} delay={si * 80}>

@@ -39,7 +39,7 @@ export function HomeGallery() {
 
   return (
     <section className="border-y border-border bg-secondary/30">
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <div className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Gallery</p>

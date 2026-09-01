@@ -45,7 +45,7 @@ function GalleryPage() {
   return (
     <>
       <section className="surface-dark grain relative overflow-hidden">
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
+        <div className="relative z-10 container-lux mx-auto w-full max-w-7xl pt-44 pb-24 md:pt-52 md:pb-32">
           <Reveal>
             <p className="eyebrow">Gallery</p>
           </Reveal>
@@ -64,7 +64,7 @@ function GalleryPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
         <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3">
           {shots.map((s, i) => (
             <li key={s.label} className="mb-4 break-inside-avoid">
