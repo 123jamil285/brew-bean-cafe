@@ -74,11 +74,11 @@ export function WhyChooseUs() {
             </div>
           </Reveal>
 
-          <ul className="grid gap-px overflow-hidden rounded-[20px] bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-px overflow-hidden rounded-[20px] bg-border md:grid-cols-2 lg:grid-cols-3">
             {reasons.map((r, i) => (
               <li key={r.title} className="bg-background">
                 <Reveal delay={Math.min(i, 3) * 110}>
-                  <article className="group h-full p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-secondary/40 hover:shadow-[var(--shadow-lift)] md:p-10">
+                  <article className="group h-full p-6 transition-all sm:p-8 duration-500 hover:-translate-y-2 hover:bg-secondary/40 hover:shadow-[var(--shadow-lift)] md:p-10">
                     <r.icon
                       className="h-6 w-6 text-accent transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:scale-110"
                       aria-hidden="true"

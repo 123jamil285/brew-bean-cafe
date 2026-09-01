@@ -52,7 +52,7 @@ export function HomeGallery() {
           </div>
         </Reveal>
 
-        <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3 [&>*]:mb-6">
+        <div className="mt-16 columns-1 gap-5 sm:gap-6 md:columns-2 lg:columns-3 [&>*]:mb-6">
           {shots.map((s, i) => (
             <Reveal key={s.caption} delay={(i % 3) * 100}>
               <button

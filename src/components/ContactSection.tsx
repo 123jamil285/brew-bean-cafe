@@ -20,7 +20,7 @@ export function ContactSection() {
   }
 
   const field =
-    "w-full rounded-[12px] border border-border bg-card px-4 py-3 text-sm outline-none transition-shadow duration-300 focus:border-accent focus:ring-2 focus:ring-accent/40";
+    "w-full rounded-[12px] border border-border bg-card min-h-12 px-4 py-3 text-base outline-none md:text-sm transition-shadow duration-300 focus:border-accent focus:ring-2 focus:ring-accent/40";
 
   return (
     <section className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
@@ -92,7 +92,7 @@ export function ContactSection() {
         <Reveal delay={140}>
           <form
             onSubmit={onSubmit}
-            className="rounded-[20px] border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:p-10"
+            className="rounded-[20px] border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8 md:p-10"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block sm:col-span-1">
@@ -139,7 +139,7 @@ export function ContactSection() {
             </div>
             <button
               type="submit"
-              className="btn-lux glow-brass mt-8 w-full transition-transform duration-500 hover:-translate-y-1 sm:w-auto"
+              className="btn-lux glow-brass btn-block-sm mt-8 transition-transform duration-500 hover:-translate-y-1 sm:w-auto"
             >
               Send Message
             </button>
@@ -188,7 +188,7 @@ export function ContactSection() {
             title="Map showing Brew & Bean Cafe location"
             src="https://www.openstreetmap.org/export/embed.html?bbox=-0.13%2C51.505%2C-0.10%2C51.520&layer=mapnik"
             loading="lazy"
-            className="h-[360px] w-full border-0 grayscale-[35%]"
+            className="h-[260px] w-full border-0 grayscale-[35%] sm:h-[320px] md:h-[400px]"
           />
         </div>
       </Reveal>

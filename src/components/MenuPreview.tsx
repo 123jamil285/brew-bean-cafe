@@ -92,7 +92,7 @@ export function MenuPreview() {
               type="button"
               aria-selected={active === c.key}
               onClick={() => setActive(c.key)}
-              className={`rounded-[12px] px-6 py-2.5 font-[family-name:var(--font-button)] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-all duration-500 ${
+              className={`min-h-11 rounded-[12px] px-4 py-2.5 sm:px-6 font-[family-name:var(--font-button)] text-[0.7rem] font-semibold tracking-[0.14em] uppercase transition-all duration-500 ${
                 active === c.key
                   ? "bg-primary text-primary-foreground shadow-[var(--shadow-soft)]"
                   : "text-muted-foreground hover:text-foreground"

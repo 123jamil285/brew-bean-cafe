@@ -7,15 +7,15 @@ export function SiteFooter() {
   return (
     <footer className="grain bg-coffee text-cream">
       <div className="relative z-10 container-lux mx-auto w-full max-w-7xl py-24">
-        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
-          <div className="max-w-sm">
-            <BrandLogo onDark className="h-14" />
+        <div className="grid gap-12 text-center sm:text-left md:grid-cols-2 md:gap-14 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
+          <div className="mx-auto max-w-sm sm:mx-0">
+            <BrandLogo onDark className="mx-auto h-12 sm:mx-0 sm:h-14" />
             <p className="mt-6 text-sm leading-relaxed opacity-80">
               Brewed with Passion, Served with Love. A single-origin roastery and quiet
               corner for the city's slow mornings.
             </p>
 
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex items-center justify-center gap-3 sm:justify-start">
               {[
                 { Icon: Instagram, label: "Instagram" },
                 { Icon: Facebook, label: "Facebook" },
@@ -37,15 +37,15 @@ export function SiteFooter() {
           <div>
             <p className="eyebrow">Visit</p>
             <ul className="mt-6 space-y-4 text-sm opacity-75">
-              <li className="flex gap-3">
+              <li className="flex justify-center gap-3 sm:justify-start">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 42 Cedar Lane, Old Harbour District
               </li>
-              <li className="flex gap-3">
+              <li className="flex justify-center gap-3 sm:justify-start">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 +1 (415) 220-1908
               </li>
-              <li className="flex gap-3">
+              <li className="flex justify-center gap-3 sm:justify-start">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 Mon–Fri 7–20 · Sat–Sun 8–22
               </li>
@@ -105,7 +105,7 @@ export function SiteFooter() {
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brass text-espresso transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+                className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brass text-espresso transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
               >
                 <Send className="h-4 w-4" />
               </button>
