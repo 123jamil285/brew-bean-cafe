@@ -35,11 +35,27 @@ const reviews = [
 export function TestimonialSlider() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [perView, setPerView] = useState(1);
+
+  useEffect(() => {
+    const compute = () =>
+      setPerView(window.innerWidth >= 1024 ? 2 : window.innerWidth >= 768 ? 2 : 1);
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, []);
+
+  const maxIndex = Math.max(0, reviews.length - perView);
+
+  useEffect(() => {
+    setIndex((i) => Math.min(i, maxIndex));
+  }, [maxIndex]);
 
   const go = useCallback(
-    (dir: number) => setIndex((i) => (i + dir + reviews.length) % reviews.length),
-    [],
+    (dir: number) => setIndex((i) => (i + dir + (maxIndex + 1)) % (maxIndex + 1)),
+    [maxIndex],
   );
+
 
   useEffect(() => {
     if (paused) return;
