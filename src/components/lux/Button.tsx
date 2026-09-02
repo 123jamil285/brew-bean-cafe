@@ -51,7 +51,13 @@ export function buttonClasses({
   block,
   blockOnMobile,
   className,
-}: ButtonProps = {}) {
+}: {
+  variant?: ButtonVariant | undefined;
+  size?: ButtonSize | undefined;
+  block?: boolean | undefined;
+  blockOnMobile?: boolean | undefined;
+  className?: string | undefined;
+} = {}) {
   return cn(
     base,
     variants[variant],
