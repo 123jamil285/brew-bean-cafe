@@ -140,9 +140,9 @@ export function TestimonialSlider() {
             <ChevronLeft className="h-5 w-5" />
           </button>
           <div className="flex gap-2.5">
-            {reviews.map((r, i) => (
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
-                key={r.name}
+                key={i}
                 type="button"
                 aria-label={`Show testimonial ${i + 1}`}
                 aria-current={i === index}
