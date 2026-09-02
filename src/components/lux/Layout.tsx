@@ -89,7 +89,7 @@ export function SectionTitle({
   className?: string;
 }) {
   return (
-    <Reveal className={className}>
+    <Reveal className={className ?? ""}>
       <div
         className={cn(
           "max-w-2xl",
