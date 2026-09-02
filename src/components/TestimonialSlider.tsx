@@ -35,11 +35,27 @@ const reviews = [
 export function TestimonialSlider() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [perView, setPerView] = useState(1);
+
+  useEffect(() => {
+    const compute = () =>
+      setPerView(window.innerWidth >= 1024 ? 2 : window.innerWidth >= 768 ? 2 : 1);
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, []);
+
+  const maxIndex = Math.max(0, reviews.length - perView);
+
+  useEffect(() => {
+    setIndex((i) => Math.min(i, maxIndex));
+  }, [maxIndex]);
 
   const go = useCallback(
-    (dir: number) => setIndex((i) => (i + dir + reviews.length) % reviews.length),
-    [],
+    (dir: number) => setIndex((i) => (i + dir + (maxIndex + 1)) % (maxIndex + 1)),
+    [maxIndex],
   );
+
 
   useEffect(() => {
     if (paused) return;
@@ -64,44 +80,53 @@ export function TestimonialSlider() {
         <div className="relative mt-14 overflow-hidden">
           <div
             className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-            style={{ transform: `translateX(-${index * 100}%)` }}
+            style={{ transform: `translateX(-${index * (100 / perView)}%)` }}
           >
-            {reviews.map((r, ri) => (
-              <figure key={r.name} className="w-full shrink-0 px-2">
-                <motion.img
-                  animate={{ opacity: index === ri ? 1 : 0.35, scale: index === ri ? 1 : 0.94 }}
-                  transition={transitionLux(0.6)}
-                  src={r.img}
-                  alt={r.name}
-                  loading="lazy"
-                  width={512}
-                  height={512}
-                  className="mx-auto h-20 w-20 rounded-full border-2 border-brass/50 object-cover"
-                />
-                <div className="mt-6 flex justify-center gap-1 text-brass">
-                  {Array.from({ length: 5 }).map((_, k) => (
-                    <motion.span
-                      key={k}
-                      animate={index === ri ? { scale: [0.6, 1.15, 1], opacity: 1 } : { scale: 1, opacity: 0.5 }}
-                      transition={transitionLux(0.5, 0.06 * k)}
-                    >
-                      <Star className="h-4 w-4 fill-current" aria-hidden="true" />
-                    </motion.span>
-                  ))}
-                </div>
-                <blockquote className="mx-auto mt-8 max-w-3xl font-display text-[clamp(1.35rem,2.6vw,2rem)] leading-snug">
-                  “{r.quote}”
-                </blockquote>
-                <figcaption className="mt-8">
-                  <span className="block text-sm font-semibold tracking-[0.14em] uppercase text-brass-soft">
-                    {r.name}
-                  </span>
-                  <span className="mt-2 block text-[0.65rem] tracking-[0.22em] uppercase opacity-60">
-                    {r.place}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
+            {reviews.map((r, ri) => {
+              const visible = ri >= index && ri < index + perView;
+              return (
+                <figure
+                  key={r.name}
+                  className="flex w-full shrink-0 flex-col px-2 md:w-1/2"
+                  aria-hidden={!visible}
+                >
+                  <div className="flex h-full flex-col rounded-[20px] border border-cream/12 bg-cream/5 p-6 backdrop-blur-sm sm:p-8">
+                    <motion.img
+                      animate={{ opacity: visible ? 1 : 0.35, scale: visible ? 1 : 0.94 }}
+                      transition={transitionLux(0.6)}
+                      src={r.img}
+                      alt={r.name}
+                      loading="lazy"
+                      width={512}
+                      height={512}
+                      className="mx-auto h-20 w-20 rounded-full border-2 border-brass/50 object-cover"
+                    />
+                    <div className="mt-6 flex justify-center gap-1 text-brass">
+                      {Array.from({ length: 5 }).map((_, k) => (
+                        <motion.span
+                          key={k}
+                          animate={visible ? { scale: [0.6, 1.15, 1], opacity: 1 } : { scale: 1, opacity: 0.5 }}
+                          transition={transitionLux(0.5, 0.06 * k)}
+                        >
+                          <Star className="h-4 w-4 fill-current" aria-hidden="true" />
+                        </motion.span>
+                      ))}
+                    </div>
+                    <blockquote className="mx-auto mt-8 max-w-3xl font-display text-[clamp(1.2rem,2.2vw,1.6rem)] leading-snug">
+                      “{r.quote}”
+                    </blockquote>
+                    <figcaption className="mt-auto pt-8">
+                      <span className="block text-sm font-semibold tracking-[0.14em] uppercase text-brass-soft">
+                        {r.name}
+                      </span>
+                      <span className="mt-2 block text-[0.65rem] tracking-[0.22em] uppercase opacity-60">
+                        {r.place}
+                      </span>
+                    </figcaption>
+                  </div>
+                </figure>
+              );
+            })}
           </div>
         </div>
 
@@ -115,9 +140,9 @@ export function TestimonialSlider() {
             <ChevronLeft className="h-5 w-5" />
           </button>
           <div className="flex gap-2.5">
-            {reviews.map((r, i) => (
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
-                key={r.name}
+                key={i}
                 type="button"
                 aria-label={`Show testimonial ${i + 1}`}
                 aria-current={i === index}
