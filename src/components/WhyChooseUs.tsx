@@ -1,5 +1,7 @@
 import { Armchair, Award, HandHeart, Sprout, Timer, Wifi, Zap } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Container } from "@/components/lux/Layout";
+import { FeatureCard } from "@/components/lux/Cards";
 
 const reasons = [
   {
@@ -48,11 +50,8 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section
-      aria-labelledby="why-heading"
-      className="border-y border-border bg-secondary/30"
-    >
-      <div className="container-lux mx-auto w-full max-w-7xl py-24 md:py-32">
+    <section aria-labelledby="why-heading" className="border-y border-border bg-secondary/30">
+      <Container className="py-24 md:py-32">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.4fr] lg:gap-20">
           <Reveal>
             <div className="lg:sticky lg:top-32">
@@ -63,13 +62,11 @@ export function WhyChooseUs() {
                 className="mt-8 font-display text-[clamp(1.75rem,4.5vw,3rem)] leading-[0.98]"
               >
                 Six reasons
-                <span className="block italic text-muted-foreground">
-                  the regulars stay.
-                </span>
+                <span className="block italic text-muted-foreground">the regulars stay.</span>
               </h2>
               <p className="mt-8 max-w-sm leading-relaxed text-muted-foreground">
-                Everything on this list costs us more than the shortcut would. We think
-                you can taste the difference in the cup.
+                Everything on this list costs us more than the shortcut would. We think you can
+                taste the difference in the cup.
               </p>
             </div>
           </Reveal>
@@ -78,25 +75,18 @@ export function WhyChooseUs() {
             {reasons.map((r, i) => (
               <li key={r.title} className="bg-background">
                 <Reveal delay={Math.min(i, 3) * 110}>
-                  <article className="group h-full p-6 transition-all sm:p-8 duration-500 hover:-translate-y-2 hover:bg-secondary/40 hover:shadow-[var(--shadow-lift)] md:p-10">
-                    <r.icon
-                      className="h-6 w-6 text-accent transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:scale-110"
-                      aria-hidden="true"
-                    />
-                    <h3 className="mt-8 font-display text-2xl md:text-3xl">{r.title}</h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                      {r.copy}
-                    </p>
-                    <p className="mt-8 text-[0.6rem] tracking-[0.24em] uppercase text-accent">
-                      {r.stat}
-                    </p>
-                  </article>
+                  <FeatureCard
+                    icon={r.icon}
+                    title={r.title}
+                    description={r.copy}
+                    meta={r.stat}
+                  />
                 </Reveal>
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
