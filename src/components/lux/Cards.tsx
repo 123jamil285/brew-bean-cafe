@@ -12,9 +12,9 @@ export function Card({
   as: Tag = "article",
 }: {
   children: ReactNode;
-  className?: string;
-  interactive?: boolean;
-  as?: "article" | "div" | "li";
+  className?: string | undefined;
+  interactive?: boolean | undefined;
+  as?: "article" | "div" | "li" | undefined;
 }) {
   return (
     <Tag
