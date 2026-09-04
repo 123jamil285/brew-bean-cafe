@@ -19,7 +19,10 @@ export const Route = createFileRoute("/reserve")({
         property: "og:description",
         content: "Book your table on Cedar Lane — slow bar, meeting nooks and terrace seating.",
       },
+      { property: "og:url", content: "/reserve" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "/reserve" }],
   }),
   component: ReservePage,
 });

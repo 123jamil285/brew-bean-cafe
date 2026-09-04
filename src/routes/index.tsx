@@ -28,7 +28,10 @@ export const Route = createFileRoute("/")({
         content:
           "A single-origin roastery and quiet corner for the city's slow mornings. Book a table today.",
       },
+      { property: "og:url", content: "/" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Home,
 });

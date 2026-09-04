@@ -25,7 +25,10 @@ export const Route = createFileRoute("/gallery")({
         content:
           "The espresso bar, the room, the roastery and the terrace — photographed on ordinary mornings.",
       },
+      { property: "og:url", content: "/gallery" },
+      { property: "og:type", content: "article" },
     ],
+    links: [{ rel: "canonical", href: "/gallery" }],
   }),
   component: GalleryPage,
 });

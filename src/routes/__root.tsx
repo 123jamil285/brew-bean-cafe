@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { PageTransition } from "../components/PageTransition";
+import { ScrollToTop } from "../components/lux/ScrollToTop";
 
 
 
@@ -83,8 +84,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Brew & Bean Cafe" },
-      { name: "description", content: "Brewed with Passion, Served with Love." },
+      {
+        name: "description",
+        content:
+          "Brew & Bean Cafe — a single-origin roastery and slow bar on Cedar Lane. Brewed with passion, served with love.",
+      },
+      {
+        name: "keywords",
+        content:
+          "specialty coffee, coffee shop, single origin espresso, roastery, cafe, pour over, Old Harbour District",
+      },
+      { name: "author", content: "Brew & Bean Cafe" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#3B2A1F" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Brew & Bean Cafe" },
+      { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -96,6 +111,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CafeOrCoffeeShop",
+          name: "Brew & Bean Cafe",
+          slogan: "Brewed with Passion, Served with Love",
+          description:
+            "A single-origin roastery and slow bar serving espresso, filter coffee and house pastries.",
+          image: "/favicon.png",
+          telephone: "+1-415-220-1908",
+          email: "hello@brewandbean.cafe",
+          priceRange: "$$",
+          servesCuisine: ["Coffee", "Pastries", "Brunch"],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "42 Cedar Lane",
+            addressLocality: "Old Harbour District",
+            addressCountry: "US",
+          },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "07:00",
+              closes: "20:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Saturday", "Sunday"],
+              opens: "08:00",
+              closes: "22:00",
+            },
+          ],
+          sameAs: [
+            "https://instagram.com",
+            "https://facebook.com",
+            "https://twitter.com",
+          ],
+        }),
       },
     ],
   }),
@@ -125,8 +183,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-xl focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+      >
+        Skip to main content
+      </a>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <PageTransition>
           <Outlet />
@@ -134,6 +198,7 @@ function RootComponent() {
 
       </main>
       <SiteFooter />
+      <ScrollToTop />
     </QueryClientProvider>
   );
 }
