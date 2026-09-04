@@ -17,7 +17,10 @@ export const Route = createFileRoute("/menu")({
         content:
           "Single-origin espresso, slow-bar filter, house pastries and all-day plates.",
       },
+      { property: "og:url", content: "/menu" },
+      { property: "og:type", content: "article" },
     ],
+    links: [{ rel: "canonical", href: "/menu" }],
   }),
   component: MenuPage,
 });

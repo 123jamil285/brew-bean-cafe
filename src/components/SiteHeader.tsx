@@ -50,7 +50,7 @@ export function SiteHeader() {
         </Link>
 
 
-        <nav className="hidden items-center justify-center gap-10 lg:flex">
+        <nav aria-label="Main" className="hidden items-center justify-center gap-10 lg:flex">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -106,7 +106,7 @@ export function SiteHeader() {
             className="fixed inset-0 z-40 flex flex-col justify-center bg-espresso/85 px-8 py-24 backdrop-blur-2xl lg:hidden"
             style={{ willChange: "transform" }}
           >
-            <nav className="flex flex-col items-center gap-7 text-center">
+            <nav aria-label="Mobile" className="flex flex-col items-center gap-7 text-center">
               {links.map((l, i) => (
                 <motion.div
                   key={l.to}

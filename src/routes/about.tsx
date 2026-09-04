@@ -19,7 +19,10 @@ export const Route = createFileRoute("/about")({
         content:
           "Direct-trade lots, small-batch roasting, and a room built for slow mornings since 2012.",
       },
+      { property: "og:url", content: "/about" },
+      { property: "og:type", content: "article" },
     ],
+    links: [{ rel: "canonical", href: "/about" }],
   }),
   component: AboutPage,
 });

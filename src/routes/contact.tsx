@@ -19,7 +19,10 @@ export const Route = createFileRoute("/contact")({
         content:
           "42 Cedar Lane, Old Harbour District. Open Mon–Fri 7–20, Sat–Sun 8–22. Call +1 (415) 220-1908.",
       },
+      { property: "og:url", content: "/contact" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "/contact" }],
   }),
   component: ContactPage,
 });

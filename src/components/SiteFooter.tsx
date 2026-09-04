@@ -24,7 +24,9 @@ export function SiteFooter() {
                 <a
                   key={label}
                   href="https://instagram.com"
-                  aria-label={label}
+                  aria-label={`Brew & Bean Cafe on ${label} (opens in a new tab)`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="grid h-10 w-10 place-items-center rounded-full border border-cream/25 transition-all duration-500 hover:-translate-y-1 hover:rotate-6 hover:scale-110 hover:border-brass hover:bg-brass hover:text-espresso"
                 >
                   <Icon className="h-4 w-4" />

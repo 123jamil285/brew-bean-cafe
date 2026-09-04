@@ -40,15 +40,15 @@ export function ContactSection() {
             <div className="flex gap-4">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <p className="leading-relaxed text-muted-foreground">
-                18 Harbour Lane, Old Harbour District
+                42 Cedar Lane, Old Harbour District
                 <br />
-                Northgate, NG1 4QT
+                Northgate District
               </p>
             </div>
             <div className="flex gap-4">
               <Phone className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-              <a href="tel:+15550142200" className="link-underline text-muted-foreground">
-                +1 (555) 014-2200
+              <a href="tel:+14152201908" className="link-underline text-muted-foreground">
+                +1 (415) 220-1908
               </a>
             </div>
             <div className="flex gap-4">
