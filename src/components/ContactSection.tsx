@@ -1,17 +1,12 @@
 import { AnimatePresence, motion } from "motion/react";
 import { transitionLux } from "@/lib/motion";
-import { useState, type FormEvent } from "react";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { OPENING_HOURS, SITE, SOCIAL_LINKS } from "@/constants/site";
+import { useContactForm } from "@/hooks/useContactForm";
 
 export function ContactSection() {
-  const [sent, setSent] = useState(false);
-
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSent(true);
-  }
+  const { errors, submitting, sent, handleSubmit } = useContactForm();
 
   const field =
     "w-full rounded-[12px] border border-border bg-card min-h-12 px-4 py-3 text-base outline-none md:text-sm transition-shadow duration-300 focus:border-accent focus:ring-2 focus:ring-accent/40";
@@ -87,7 +82,8 @@ export function ContactSection() {
 
         <Reveal delay={140}>
           <form
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
+            noValidate
             className="rounded-[20px] border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8 md:p-10"
           >
             <div className="grid gap-5 sm:grid-cols-2">
@@ -95,7 +91,19 @@ export function ContactSection() {
                 <span className="text-[0.6rem] tracking-[0.24em] uppercase text-muted-foreground">
                   Name
                 </span>
-                <input required name="name" className={`mt-2 ${field}`} placeholder="Amara Okafor" />
+                <input
+                  required
+                  name="name"
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "contact-name-error" : undefined}
+                  className={`mt-2 ${field}`}
+                  placeholder="Amara Okafor"
+                />
+                {errors.name && (
+                  <span id="contact-name-error" role="alert" className="mt-2 block text-xs text-destructive">
+                    {errors.name}
+                  </span>
+                )}
               </label>
               <label className="block sm:col-span-1">
                 <span className="text-[0.6rem] tracking-[0.24em] uppercase text-muted-foreground">
@@ -105,9 +113,16 @@ export function ContactSection() {
                   required
                   type="email"
                   name="email"
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "contact-email-error" : undefined}
                   className={`mt-2 ${field}`}
                   placeholder="you@email.com"
                 />
+                {errors.email && (
+                  <span id="contact-email-error" role="alert" className="mt-2 block text-xs text-destructive">
+                    {errors.email}
+                  </span>
+                )}
               </label>
               <label className="block sm:col-span-2">
                 <span className="text-[0.6rem] tracking-[0.24em] uppercase text-muted-foreground">
@@ -128,16 +143,24 @@ export function ContactSection() {
                   required
                   name="message"
                   rows={5}
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? "contact-message-error" : undefined}
                   className={`mt-2 ${field} resize-none`}
                   placeholder="Tell us what you need — a table, a private hire, or a wholesale order."
                 />
+                {errors.message && (
+                  <span id="contact-message-error" role="alert" className="mt-2 block text-xs text-destructive">
+                    {errors.message}
+                  </span>
+                )}
               </label>
             </div>
             <button
               type="submit"
-              className="btn-lux glow-brass btn-block-sm mt-8 transition-transform duration-500 hover:-translate-y-1 sm:w-auto"
+              disabled={submitting}
+              className="btn-lux glow-brass btn-block-sm mt-8 transition-transform duration-500 hover:-translate-y-1 disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
             >
-              Send Message
+              {submitting ? "Sending…" : "Send Message"}
             </button>
             <AnimatePresence>
               {sent && (
