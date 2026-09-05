@@ -4,17 +4,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { transitionLux } from "@/lib/motion";
 import { BrandLogo } from "./BrandLogo";
-
-
-
-const links = [
-  { to: "/", label: "Home" },
-  { to: "/menu", label: "Menu" },
-  { to: "/about", label: "Our Story" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/contact", label: "Contact" },
-  { to: "/reserve", label: "Reserve" },
-] as const;
+import { NAV_LINKS } from "@/constants/site";
 
 
 export function SiteHeader() {
@@ -51,7 +41,7 @@ export function SiteHeader() {
 
 
         <nav aria-label="Main" className="hidden items-center justify-center gap-10 lg:flex">
-          {links.map((l) => (
+          {NAV_LINKS.map((l) => (
             <Link
               key={l.to}
               to={l.to}
@@ -107,7 +97,7 @@ export function SiteHeader() {
             style={{ willChange: "transform" }}
           >
             <nav aria-label="Mobile" className="flex flex-col items-center gap-7 text-center">
-              {links.map((l, i) => (
+              {NAV_LINKS.map((l, i) => (
                 <motion.div
                   key={l.to}
                   initial={{ opacity: 0, y: 14 }}
