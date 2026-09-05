@@ -34,7 +34,7 @@ export function TestimonialSlider() {
 
   useEffect(() => {
     if (paused) return;
-    const t = setInterval(() => go(1), 6500);
+    const t = setInterval(() => go(1), AUTOPLAY_MS);
     return () => clearInterval(t);
   }, [paused, go]);
 
