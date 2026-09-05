@@ -57,7 +57,7 @@ export function TestimonialSlider() {
             className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ transform: `translateX(-${index * (100 / perView)}%)` }}
           >
-            {reviews.map((r, ri) => {
+            {TESTIMONIALS.map((r, ri) => {
               const visible = ri >= index && ri < index + perView;
               return (
                 <figure
