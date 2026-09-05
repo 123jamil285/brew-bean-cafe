@@ -3,34 +3,9 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { motion } from "motion/react";
 import { transitionLux } from "@/lib/motion";
 import { Reveal } from "@/components/Reveal";
+import { TESTIMONIALS } from "@/constants/testimonials";
 
-import guest1 from "@/assets/guest-1.jpg";
-import guest2 from "@/assets/guest-2.jpg";
-import guest3 from "@/assets/guest-3.jpg";
-
-const reviews = [
-  {
-    img: guest1,
-    quote:
-      "The cortado here ruined every other cortado for me. The room is even better than the coffee — I've written half a book at the mezzanine table.",
-    name: "Amara Okafor",
-    place: "Old Harbour, regular since 2019",
-  },
-  {
-    img: guest2,
-    quote:
-      "I've taken three clients here and signed all three. Something about the light at 10am and a pour over that arrives exactly when it should.",
-    name: "Daniel Keller",
-    place: "Architect, Northside",
-  },
-  {
-    img: guest3,
-    quote:
-      "They remember my order, my dog's name and which table I like. That's the whole review — plus the best basque cheesecake in the city.",
-    name: "Priya Shah",
-    place: "Neighbour, two streets over",
-  },
-];
+const AUTOPLAY_MS = 6500;
 
 export function TestimonialSlider() {
   const [index, setIndex] = useState(0);
@@ -38,14 +13,14 @@ export function TestimonialSlider() {
   const [perView, setPerView] = useState(1);
 
   useEffect(() => {
-    const compute = () =>
-      setPerView(window.innerWidth >= 1024 ? 2 : window.innerWidth >= 768 ? 2 : 1);
+    const compute = () => setPerView(window.innerWidth >= 768 ? 2 : 1);
     compute();
     window.addEventListener("resize", compute);
     return () => window.removeEventListener("resize", compute);
   }, []);
 
-  const maxIndex = Math.max(0, reviews.length - perView);
+  const maxIndex = Math.max(0, TESTIMONIALS.length - perView);
+
 
   useEffect(() => {
     setIndex((i) => Math.min(i, maxIndex));
