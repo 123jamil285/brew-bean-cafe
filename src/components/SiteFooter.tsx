@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, MapPin, Phone, Clock, Facebook, Twitter, Send } from "lucide-react";
+import { MapPin, Phone, Clock, Send } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
+import { FOOTER_LINKS, SITE, SOCIAL_LINKS } from "@/constants/site";
 
 
 export function SiteFooter() {
@@ -11,19 +12,14 @@ export function SiteFooter() {
           <div className="mx-auto max-w-sm sm:mx-0">
             <BrandLogo onDark className="mx-auto h-12 sm:mx-0 sm:h-14" />
             <p className="mt-6 text-sm leading-relaxed opacity-80">
-              Brewed with Passion, Served with Love. A single-origin roastery and quiet
-              corner for the city's slow mornings.
+              {SITE.tagline}. {SITE.description}
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-3 sm:justify-start">
-              {[
-                { Icon: Instagram, label: "Instagram" },
-                { Icon: Facebook, label: "Facebook" },
-                { Icon: Twitter, label: "Twitter" },
-              ].map(({ Icon, label }) => (
+              {SOCIAL_LINKS.map(({ Icon, label, href }) => (
                 <a
                   key={label}
-                  href="https://instagram.com"
+                  href={href}
                   aria-label={`Brew & Bean Cafe on ${label} (opens in a new tab)`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -41,15 +37,15 @@ export function SiteFooter() {
             <ul className="mt-6 space-y-4 text-sm opacity-75">
               <li className="flex justify-center gap-3 sm:justify-start">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                42 Cedar Lane, Old Harbour District
+                {SITE.addressLine1}
               </li>
               <li className="flex justify-center gap-3 sm:justify-start">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                +1 (415) 220-1908
+                {SITE.phone}
               </li>
               <li className="flex justify-center gap-3 sm:justify-start">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                Mon–Fri 7–20 · Sat–Sun 8–22
+                {SITE.hoursShort}
               </li>
             </ul>
           </div>
@@ -57,31 +53,13 @@ export function SiteFooter() {
           <div>
             <p className="eyebrow">Explore</p>
             <ul className="mt-6 space-y-4 text-sm opacity-75">
-              <li>
-                <Link to="/menu" className="link-underline">
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="link-underline">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link to="/gallery" className="link-underline">
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="link-underline">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/reserve" className="link-underline">
-                  Reservations
-                </Link>
-              </li>
+              {FOOTER_LINKS.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="link-underline">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -118,7 +96,7 @@ export function SiteFooter() {
 
 
         <div className="mt-16 flex flex-col gap-3 border-t border-cream/15 pt-8 text-[0.65rem] tracking-[0.2em] uppercase opacity-50 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Brew &amp; Bean Cafe</span>
+          <span>© {new Date().getFullYear()} {SITE.name}</span>
           <span>Roasted daily in small batches</span>
         </div>
       </div>

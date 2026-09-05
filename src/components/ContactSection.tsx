@@ -1,15 +1,9 @@
 import { AnimatePresence, motion } from "motion/react";
 import { transitionLux } from "@/lib/motion";
 import { useState, type FormEvent } from "react";
-import { Clock, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-
-const hours = [
-  ["Monday – Thursday", "7:00 — 18:00"],
-  ["Friday", "7:00 — 21:00"],
-  ["Saturday", "8:00 — 21:00"],
-  ["Sunday", "8:00 — 16:00"],
-];
+import { OPENING_HOURS, SITE, SOCIAL_LINKS } from "@/constants/site";
 
 export function ContactSection() {
   const [sent, setSent] = useState(false);
@@ -40,30 +34,30 @@ export function ContactSection() {
             <div className="flex gap-4">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <p className="leading-relaxed text-muted-foreground">
-                42 Cedar Lane, Old Harbour District
+                {SITE.addressLine1}
                 <br />
-                Northgate District
+                {SITE.addressLine2}
               </p>
             </div>
             <div className="flex gap-4">
               <Phone className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
-              <a href="tel:+14152201908" className="link-underline text-muted-foreground">
-                +1 (415) 220-1908
+              <a href={SITE.phoneHref} className="link-underline text-muted-foreground">
+                {SITE.phone}
               </a>
             </div>
             <div className="flex gap-4">
               <Mail className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <a
-                href="mailto:hello@brewandbean.cafe"
+                href={SITE.emailHref}
                 className="link-underline text-muted-foreground"
               >
-                hello@brewandbean.cafe
+                {SITE.email}
               </a>
             </div>
             <div className="flex gap-4">
               <Clock className="mt-1 h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
               <ul className="w-full max-w-sm space-y-2.5">
-                {hours.map(([d, t]) => (
+                {OPENING_HOURS.map(([d, t]) => (
                   <li
                     key={d}
                     className="flex justify-between gap-6 border-b border-border pb-2 text-sm text-muted-foreground"
@@ -75,11 +69,13 @@ export function ContactSection() {
               </ul>
             </div>
             <div className="flex gap-3 pt-2">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
+              {SOCIAL_LINKS.map(({ Icon, label, href }) => (
                 <a
-                  key={i}
-                  href="#"
-                  aria-label={["Instagram", "Facebook", "Twitter"][i]}
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${SITE.name} on ${label} (opens in a new tab)`}
                   className="grid h-11 w-11 place-items-center rounded-full border border-border text-muted-foreground transition-all duration-500 hover:-translate-y-1 hover:border-accent hover:bg-accent hover:text-accent-foreground"
                 >
                   <Icon className="h-4.5 w-4.5" aria-hidden="true" />
