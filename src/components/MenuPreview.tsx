@@ -29,7 +29,7 @@ export function MenuPreview() {
           aria-label="Menu categories"
           className="mx-auto mt-12 flex w-fit max-w-full flex-wrap justify-center gap-2 rounded-[20px] border border-border bg-secondary/40 p-2"
         >
-          {categories.map((c) => (
+          {MENU_CATEGORIES.map((c) => (
             <button
               key={c.key}
               role="tab"
