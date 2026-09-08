@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Clock, Send, Check } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 import { FOOTER_LINKS, SITE, SOCIAL_LINKS } from "@/constants/site";
 
 
 export function SiteFooter() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
   return (
     <footer className="grain bg-coffee text-cream">
       <div className="relative z-10 container-lux mx-auto w-full max-w-7xl py-24">
@@ -70,7 +74,12 @@ export function SiteFooter() {
             </p>
             <form
               className="mt-6 flex items-center gap-2"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!email.trim()) return;
+                setSubscribed(true);
+                setEmail("");
+              }}
             >
               <label htmlFor="footer-email" className="sr-only">
                 Email address
@@ -79,6 +88,11 @@ export function SiteFooter() {
                 id="footer-email"
                 type="email"
                 required
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (subscribed) setSubscribed(false);
+                }}
                 placeholder="you@email.com"
                 className="min-w-0 flex-1 rounded-xl border border-cream/25 bg-cream/5 px-4 py-3 text-sm text-cream placeholder:text-cream/45 outline-none transition-all focus:border-brass focus:ring-2 focus:ring-brass/60"
               />
@@ -87,10 +101,14 @@ export function SiteFooter() {
                 aria-label="Subscribe"
                 className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brass text-espresso transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
               >
-                <Send className="h-4 w-4" />
+                {subscribed ? <Check className="h-4 w-4" /> : <Send className="h-4 w-4" />}
               </button>
             </form>
+            <p role="status" aria-live="polite" className="mt-3 min-h-5 text-xs text-brass-soft">
+              {subscribed ? "Thank you — you're on the list." : ""}
+            </p>
           </div>
+
 
         </div>
 
