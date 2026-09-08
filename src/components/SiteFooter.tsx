@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Clock, Send, Check } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 import { FOOTER_LINKS, SITE, SOCIAL_LINKS } from "@/constants/site";
 
 
 export function SiteFooter() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
   return (
     <footer className="grain bg-coffee text-cream">
       <div className="relative z-10 container-lux mx-auto w-full max-w-7xl py-24">
