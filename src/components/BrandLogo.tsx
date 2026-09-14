@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/brew-bean-logo.png.asset.json";
+import logoAsset from "@/assets/brew-bean-logo.png";
 
 type Props = {
   className?: string;
@@ -14,7 +14,7 @@ type Props = {
 export function BrandLogo({ className = "h-10", onDark = false, priority = false }: Props) {
   const img = (
     <img
-      src={logoAsset.url}
+      src={logoAsset}
       alt="Brew & Bean Cafe — Brewed with Passion, Served with Love."
       width={1162}
       height={406}
